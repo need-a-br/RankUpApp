@@ -3,8 +3,8 @@
 
 
 # Environment Setup -
-    $ rails new rankup-app -d postgresql -T
-    $ cd apartment-app
+    $ rails new rankupapp -d postgresql -T
+    $ cd rankupapp
     $ rails db:create
 
 # add to github repo
@@ -124,3 +124,20 @@ $ rails db:migrate
             }
 
             export default App
+
+
+## Icebox Testing
+# for protected index
+
+//   it("shows student data", () => {
+//     render(
+//       <BrowserRouter>
+//         <ProtectedStudentIndex students={mockStudents} />
+//       </BrowserRouter>
+//     )
+//     mockStudents.forEach((student) => {
+//         const studentName = screen.getByText(student.name)
+//         expect(studentName).toBeInTheDocument()
+        
+//     })
+//   })
