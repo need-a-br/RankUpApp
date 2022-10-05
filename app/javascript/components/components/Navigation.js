@@ -18,25 +18,25 @@ const Navigation = ({
           </NavItem>
             <NavItem>
                 <NavLink to="/home" className="nav-link">
-                about us
+                About Us
                 </NavLink>
             </NavItem>
             <NavItem>
                 <NavLink to="/home" className="nav-link">
-                contact us
+                Contact Us
                 </NavLink>
             </NavItem>
             {!logged_in && (
             <NavItem>
               <a href={sign_in_route} className="nav-link">
-                log in
+                Log In
               </a>
             </NavItem>
           )}
           {!logged_in && (
             <NavItem>
               <a href={new_user_route} className="nav-link">
-                register
+                Register
               </a>
             </NavItem>
           )}
@@ -57,11 +57,10 @@ const Navigation = ({
           {logged_in && (
             <NavItem>
               <a href={sign_out_route} className="nav-link">
-                log Out
+                Log Out
               </a>
             </NavItem>
           )}
-          
         </Nav>
       </>
     )
