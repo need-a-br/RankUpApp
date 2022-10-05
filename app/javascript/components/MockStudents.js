@@ -1,4 +1,4 @@
-const students = [
+const mockStudents = [
     {
         id: 1,
         name: "Daniel LaRusso",
@@ -41,4 +41,4 @@ const students = [
     }
 ]
 
-export default students
+export default mockStudents
