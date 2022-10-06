@@ -6,17 +6,16 @@ import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Home from "./pages/Home";
 import Navigation from "./components/Navigation";
-import Students from "../mockstudents"
-const App = (props) => {
 
+const App = (props) => {
   return (
     <BrowserRouter>
-    <Header {...props} />
-    <Routes>
-      <Route exact path="/" element={<Home />} />
-    </Routes>
-    <Footer />
-  </BrowserRouter>
+      <Header {...props} />
+        <Routes>
+          <Route exact path="/" element={<Home {...props} />} />
+        </Routes>
+      <Footer />
+    </BrowserRouter>
 );
   }
   export default App

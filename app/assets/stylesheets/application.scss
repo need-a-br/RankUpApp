@@ -14,3 +14,57 @@
  *= require_self
  */
  @import "bootstrap";
+
+ .home_image {
+    margin: 0 auto;
+    width: fit-content;
+  }
+
+ .cards {
+    margin: 0 auto;
+    text-align: center;
+  }
+
+ header {
+    padding: 1px;
+    background-color: lightgray !important;
+    height: 8vmin;
+    width: 100%;
+  }
+
+  a:link {
+    text-decoration: none !important;
+    color: black;
+    padding: 5px;
+  }
+
+  a:visited {
+    text-decoration: none !important;
+    color: grey;
+    padding: 5px;
+  }
+  
+  a:hover, a:active {
+    text-decoration: none;
+    color: black !important;
+  }
+
+ button {
+    width: 100px;
+    height: 40px;
+  }
+
+  footer {
+    padding: 10px;
+    display: inline-block;
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    justify-content: space-around;
+    font-size: 15px;
+    background-color: lightgray;
+    width: 100%;
+    color: black;
+    height: 5vmin;
+    display: inline-block;
+  }
