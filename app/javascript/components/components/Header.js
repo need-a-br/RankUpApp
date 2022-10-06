@@ -1,12 +1,21 @@
 import React from "react"
 import Navigation from "./Navigation"
+import { Nav, NavItem, Navbar, NavbarBrand } from "reactstrap"
+import { NavLink } from "react-router-dom"
+
 
 const Header = (props) => {
   return (
-    <>
-      <h5>RankUp <Navigation {...props} /></h5>
-    </>
+    <header>
+      <Navbar className="my-2" light>
+        <NavbarBrand>
+          RankUp
+        </NavbarBrand>
+        <NavItem className="nav-link"><Navigation {...props} /> </NavItem>
+      </Navbar>  
+    </header>
   )
 }
 
 export default Header
+

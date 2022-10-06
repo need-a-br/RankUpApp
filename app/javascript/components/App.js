@@ -11,15 +11,9 @@ import StudentNew from "./pages/StudentNew";
 import StudentEdit from "./pages/StudentEdit";
 import mockStudents from "./MockStudents";
 import NotFound from "./pages/NotFound";
-const App = (
-  props,
-  logged_in,
-  current_user,
-  new_user_route,
-  sign_in_route,
-  sign_out_route,
-  user_id
-) => {
+import Navigation from "./components/Navigation";
+
+const App = (props) => {
   const [students, setStudents] = useState(mockStudents);
   // console.log(user_id)
   
@@ -30,7 +24,7 @@ const App = (
     <BrowserRouter>
       <Header {...props} />
       <Routes>
-        <Route exact path="/" element={<Home />} />
+        <Route exact path="/" element={<Home {...props} />} />
         <Route
           path="/protectedstudentindex"
           element={<ProtectedStudentIndex students={students} {...props} />}
