@@ -11,13 +11,16 @@ import StudentNew from "./pages/StudentNew";
 import StudentEdit from "./pages/StudentEdit";
 import mockStudents from "./MockStudents";
 import NotFound from "./pages/NotFound";
-import Navigation from "./components/Navigation";
 
 const App = (props) => {
   const [students, setStudents] = useState(mockStudents);
 
+  const deleteStudent = (student) => {
+    console.log("student:", student)
+    console.log("id:", id)
+  }
 
-  const readStudents = () => {
+const readStudents = () => {
     console.log(students);
   };
 
@@ -33,7 +36,7 @@ const App = (props) => {
           path="/protectedstudentindex"
           element={<ProtectedStudentIndex students={students} {...props} />}
         />
-        <Route path="/studentshow/:id" element={<StudentShow students={students} {...props} />} />
+        <Route path="/studentshow/:id" element={<StudentShow deleteStudent={deleteStudent} students={students} {...props}/>} />
         <Route path="/studentnew" element={<StudentNew createStudent={createStudent} />} />
         <Route path="/studentedit" element={<StudentEdit />} />
         <Route path= "/*" element={<NotFound />} />

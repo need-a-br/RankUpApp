@@ -1,6 +1,7 @@
 import React from "react";
-import { redirect, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { NavLink } from "react-router-dom";
+import DeleteModal from "../components/DeleteModal";
 import {
   Card,
   CardBody,
@@ -11,9 +12,15 @@ import {
   Button,
 } from "reactstrap";
 
-const StudentShow = ({ students, logged_in }) => {
+const StudentShow = ({ students, logged_in, deleteStudent }) => {
   const { id } = useParams();
   let currentStudent = students?.find((student) => student.id === +id);
+
+  const handleDelete = () => {
+    deleteStudent(id);
+    console.log(currentStudent);
+  };
+
   return (
     <>
       <h1> View Student Here. </h1>
@@ -35,6 +42,7 @@ const StudentShow = ({ students, logged_in }) => {
             <NavLink to={"/protectedstudentindex"} className="nav-link">
               <Button>Back to All Students</Button>
             </NavLink>
+            <DeleteModal handleDelete={handleDelete}/>
           </CardBody>
         </Card>
       )}
