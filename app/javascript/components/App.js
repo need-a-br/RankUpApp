@@ -15,8 +15,8 @@ import Navigation from "./components/Navigation";
 
 const App = (props) => {
   const [students, setStudents] = useState(mockStudents);
-  // console.log(user_id)
-  
+
+
   const readStudents = () => {
     console.log(students);
   };
@@ -29,10 +29,10 @@ const App = (props) => {
           path="/protectedstudentindex"
           element={<ProtectedStudentIndex students={students} {...props} />}
         />
-        <Route path="/studentshow" element={<StudentShow />} />
+        <Route path="/studentshow/:id" element={<StudentShow students={students} {...props} />} />
         <Route path="/studentnew" element={<StudentNew />} />
         <Route path="/studentedit" element={<StudentEdit />} />
-        <Route element={<NotFound />} />
+        <Route path= "/*" element={<NotFound />} />
       </Routes>
       <Footer />
     </BrowserRouter>
