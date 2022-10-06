@@ -23,6 +23,10 @@ const App = (props) => {
 const readStudents = () => {
     console.log(students);
   };
+
+  const createStudent = (student) => (
+    console.log(student)
+  )
   return (
     <BrowserRouter>
       <Header {...props} />
@@ -33,7 +37,7 @@ const readStudents = () => {
           element={<ProtectedStudentIndex students={students} {...props} />}
         />
         <Route path="/studentshow/:id" element={<StudentShow deleteStudent={deleteStudent} students={students} {...props}/>} />
-        <Route path="/studentnew" element={<StudentNew />} />
+        <Route path="/studentnew" element={<StudentNew createStudent={createStudent} />} />
         <Route path="/studentedit" element={<StudentEdit />} />
         <Route path= "/*" element={<NotFound />} />
       </Routes>
