@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import {
   Card,
   CardBody,
@@ -10,22 +10,7 @@ import {
 } from "reactstrap";
 import { NavLink } from "react-router-dom";
 
-const ProtectedStudentIndex = ({ }) => {
-  const [students, setStudents] = useState([])
-
-  useEffect(() => {
-    readStudents()
-  }, [])
-
-  const readStudents = () => {
-    fetch("/students")
-      .then((response) => response.json())
-      .then((payload) => {
-        console.log(payload)
-        setStudents(payload)
-      })
-      .catch((error) => console.log(error))
-  }
+const ProtectedStudentIndex = ({ students }) => {
 
   return (
     <>
