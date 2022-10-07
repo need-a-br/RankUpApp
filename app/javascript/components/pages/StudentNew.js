@@ -2,7 +2,7 @@ import React, {useState} from "react"
 import { Form, FormGroup, Input, Label, Button } from "reactstrap"
 import { useNavigate } from 'react-router-dom'
 
-const StudentNew = ( { createStudent }) => {
+const StudentNew = ( { createStudent, logged_in }) => {
   const navigate = useNavigate()
   const [newStudent, setNewStudent] = useState({
     name:"", 
@@ -25,6 +25,7 @@ const StudentNew = ( { createStudent }) => {
   return (
     <>
       <h3>Add a Student</h3>
+    {logged_in && (
       <div>Complete the form to add a Student. When done, click on Submit button
       <Form>
         <FormGroup>
@@ -50,6 +51,8 @@ const StudentNew = ( { createStudent }) => {
         </Button>
       </Form>
       </div>
+    )}
+    {!logged_in && <h1>Please Log In To Continue</h1>}
     </>
   )
 }

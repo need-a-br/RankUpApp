@@ -12,7 +12,7 @@ import {
   Button,
 } from "reactstrap";
 
-const StudentShow = ({ students, logged_in, deleteStudent }) => {
+const StudentShow = ({ students, logged_in, deleteStudent, index }) => {
   const { id } = useParams();
   let currentStudent = students?.find((student) => student.id === +id);
 
@@ -25,11 +25,7 @@ const StudentShow = ({ students, logged_in, deleteStudent }) => {
     <>
       <h1> View Student Here. </h1>
       {logged_in && (
-        <Card
-          style={{
-            width: "18rem",
-          }}
-        >
+        <Card style={{ width: "18rem",}} key={index} >
           <img alt="Card" src={currentStudent.image} />
           <CardBody>
             <CardTitle tag="h5">{currentStudent.name}</CardTitle>
@@ -40,7 +36,10 @@ const StudentShow = ({ students, logged_in, deleteStudent }) => {
           </ListGroup>
           <CardBody>
             <NavLink to={"/protectedstudentindex"} className="nav-link">
-              <Button>Back to All Students</Button>
+              <Button>See All Students</Button>
+            </NavLink>
+            <NavLink to={`/studentedit/${currentStudent.id}`} className="nav-link">
+              <Button>Update/Edit</Button>
             </NavLink>
             <DeleteModal handleDelete={handleDelete}/>
           </CardBody>

@@ -19,11 +19,7 @@ const ProtectedStudentIndex = ({ students, current_user }) => {
       <h1>View Your Students Here.</h1>
       {filteredStudents?.map((student, index) => {
         return (
-          <Card
-            style={{
-              width: "18rem",
-            }}
-          >
+          <Card style={{ width: "18rem", }} key={index} >
             <img alt="Card" src={student.image} />
             <CardBody>
               <CardTitle tag="h5">{student.name}</CardTitle>
