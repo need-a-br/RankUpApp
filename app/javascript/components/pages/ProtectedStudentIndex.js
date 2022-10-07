@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import {
   Card,
   CardBody,
@@ -10,14 +10,27 @@ import {
 } from "reactstrap";
 import { NavLink } from "react-router-dom";
 
-const ProtectedStudentIndex = ({ students, current_user }) => {
-  const filteredStudents = students?.filter(
-    (student) => student.user_id === current_user.id
-  );
+const ProtectedStudentIndex = ({ }) => {
+  const [students, setStudents] = useState([])
+
+  useEffect(() => {
+    readStudents()
+  }, [])
+
+  const readStudents = () => {
+    fetch("/students")
+      .then((response) => response.json())
+      .then((payload) => {
+        console.log(payload)
+        setStudents(payload)
+      })
+      .catch((error) => console.log(error))
+  }
+
   return (
     <>
       <h1>View Your Students Here.</h1>
-      {filteredStudents?.map((student, index) => {
+      {students?.map((student, index) => {
         return (
           <Card style={{ width: "18rem", }} key={index} >
             <img alt="Card" src={student.image} />
