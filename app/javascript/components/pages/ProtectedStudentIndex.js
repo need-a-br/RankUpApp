@@ -10,14 +10,12 @@ import {
 } from "reactstrap";
 import { NavLink } from "react-router-dom";
 
-const ProtectedStudentIndex = ({ students, current_user }) => {
-  const filteredStudents = students?.filter(
-    (student) => student.user_id === current_user.id
-  );
+const ProtectedStudentIndex = ({ students }) => {
+
   return (
     <>
       <h1>View Your Students Here.</h1>
-      {filteredStudents?.map((student, index) => {
+      {students?.map((student, index) => {
         return (
           <Card style={{ width: "18rem", }} key={index} >
             <img alt="Card" src={student.image} />
