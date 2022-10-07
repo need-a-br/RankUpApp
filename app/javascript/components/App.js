@@ -27,6 +27,11 @@ const readStudents = () => {
   const createStudent = (student) => (
     console.log(student)
   )
+
+  const updateStudent = (student) => (
+    console.log("student:", student)
+  )
+
   return (
     <BrowserRouter>
       <Header {...props} />
@@ -37,8 +42,8 @@ const readStudents = () => {
           element={<ProtectedStudentIndex students={students} {...props} />}
         />
         <Route path="/studentshow/:id" element={<StudentShow deleteStudent={deleteStudent} students={students} {...props}/>} />
-        <Route path="/studentnew" element={<StudentNew createStudent={createStudent} />} />
-        <Route path="/studentedit" element={<StudentEdit />} />
+        <Route path="/studentnew" element={<StudentNew createStudent={createStudent} {...props} />} />
+        <Route path="/studentedit/:id" element={<StudentEdit updateStudent={updateStudent} students={students} {...props} />} />
         <Route path= "/*" element={<NotFound />} />
       </Routes>
       <Footer />
