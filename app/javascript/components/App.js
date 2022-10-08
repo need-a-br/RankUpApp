@@ -15,23 +15,9 @@ import NotFound from "./pages/NotFound";
 const App = (props) => {
   const [students, setStudents] = useState([]);
 
-  useEffect(() => {
-    readStudents()
-  }, [])
-
-  const readStudents = () => {
-    fetch("/students")
-      .then((response) => response.json())
-      .then((payload) => {
-        console.log(payload)
-        setStudents(payload)
-      })
-      .catch((error) => console.log(error))
-  }
-
   const deleteStudent = (student) => {
     console.log("student:", student)
-    console.log("id:", id)
+
   }
 
   const createStudent = (student) => (
@@ -51,7 +37,7 @@ const App = (props) => {
           path="/protectedstudentindex"
           element={<ProtectedStudentIndex students={students} {...props} />}
         />
-        <Route path="/studentshow/:id" element={<StudentShow deleteStudent={deleteStudent} students={students} {...props}/>} />
+        <Route path="/studentshow/:id" element={<StudentShow deleteStudent={deleteStudent} student={students} {...props}/>} />
         <Route path="/studentnew" element={<StudentNew createStudent={createStudent} {...props} />} />
         <Route path="/studentedit/:id" element={<StudentEdit updateStudent={updateStudent} students={students} {...props} />} />
         <Route path= "/*" element={<NotFound />} />

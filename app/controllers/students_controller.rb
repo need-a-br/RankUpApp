@@ -7,8 +7,12 @@ class StudentsController < ApplicationController
     end
 
     def show
-        student = Student.find(params[:id])
-        render json: student
+        students = Student.find(params[:id])
+        if students.user_id != current_user.id
+            render json: students.errors, status: 422
+        else 
+            render json: students
+        end
     end
 
 end
