@@ -2,7 +2,7 @@ class StudentsController < ApplicationController
     before_action :authenticate_user!
 
     def index
-        students = Student.select { |student| student.user_id == current_user.id }
+        students = Student.all { |student| student.user_id == current_user.id }
         render json: students
     end
 
@@ -13,6 +13,21 @@ class StudentsController < ApplicationController
         else 
             render json: students
         end
+    end
+
+    def create
+        user = current_user
+        student = user.students.create(student_params)
+        if student.valid?
+            render json: student
+        else
+            render json: student.errors, status: 422
+        end
+    end
+    
+    private
+    def student_params
+        params.require(:student).permit(:name, :rank, :notes, :image, :user_id)
     end
 
 end

@@ -15,14 +15,37 @@ import NotFound from "./pages/NotFound";
 const App = (props) => {
   const [students, setStudents] = useState([]);
 
+
+  useEffect(() => {
+    readStudents()
+  }, [])
+ 
+  const readStudents = () => {
+    fetch("/students")
+      .then((response) => response.json())
+      .then((payload) => {
+        setStudents(payload)
+      })
+      .catch((error) => console.log(error))
+  }
+  const createStudent = (students) => {
+    fetch("/students", {
+      body: JSON.stringify(students),
+      headers: {
+        "Content-Type": "application/json"
+      },
+      method: "POST"
+    })
+    .then((response) => response.json())
+    .then((payload) => readStudents(payload))
+    .catch((errors) => console.log("Student create errors:", errors))
+  }
   const deleteStudent = (student) => {
     console.log("student:", student)
 
   }
 
-  const createStudent = (student) => (
-    console.log(student)
-  )
+
 
   const updateStudent = (student) => (
     console.log("student:", student)
@@ -35,7 +58,7 @@ const App = (props) => {
         <Route exact path="/" element={<Home {...props} />} />
         <Route
           path="/protectedstudentindex"
-          element={<ProtectedStudentIndex students={students} {...props} />}
+          element={<ProtectedStudentIndex {...props} students = { students }/>}
         />
         <Route path="/studentshow/:id" element={<StudentShow deleteStudent={deleteStudent} student={students} {...props}/>} />
         <Route path="/studentnew" element={<StudentNew createStudent={createStudent} {...props} />} />

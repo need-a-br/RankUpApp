@@ -11,7 +11,7 @@ RSpec.describe "Students", type: :request do
         notes: "Became a black belt in like 3 days",
         rank: "Black Belt",
         image: "https://mediaproxy.salon.com/width/1200/https://media.salon.com/2015/08/daniel-the-bully-karate-kid.jpg",
-        # user_id: user.id
+         user_id: user.id
       )
       get '/students'
 
