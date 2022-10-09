@@ -41,15 +41,31 @@ const App = (props) => {
     .catch((errors) => console.log("Student create errors:", errors))
   }
   const deleteStudent = (student) => {
-    console.log("student:", student)
-
+    fetch(`http://localhost:3000/students/${id}`, {
+      headers: {
+        "Content-Type": "application/json"
+      },
+      method: "DELETE"
+    })
+    .then((response) => response.json())
+    .then((payload) => this.readStudent())
+    .catch((errors) => console.log("delete errors:", errors))
   }
 
-
-
-  const updateStudent = (student) => (
-    console.log("student:", student)
-  )
+  const updateStudent = (student) => {
+    fetch(`http://localhost:3000/students/${id}`, {
+      body: JSON.stringify(student),
+      headers: {
+        "Content-Type": "application/json"
+      },
+      method: "PATCH"
+    })
+    .then((response)=> response.json())
+    .then((payload)=> this.readStudent())
+    .catch((errors) => console.log("student update errors:", errors))
+  }
+    
+  
 
   return (
     <BrowserRouter>

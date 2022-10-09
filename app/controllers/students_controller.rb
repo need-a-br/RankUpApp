@@ -24,6 +24,25 @@ class StudentsController < ApplicationController
             render json: student.errors, status: 422
         end
     end
+
+    # def update
+    #     student = Student.find(params[:id])
+    #     student.update(student_params)
+    #     if student.valid?
+    #         render json: student
+    #     else
+    #         render json: student.errors, status 422
+    #     end
+    # end
+
+    def destroy
+        student = Student.find(params[:id])
+        if student.destroy
+            render json: student
+        else
+            render json: student.errors
+        end
+    end
     
     private
     def student_params
