@@ -2,7 +2,7 @@ class StudentsController < ApplicationController
     before_action :authenticate_user!
 
     def index
-        students = Student.all { |student| student.user_id == current_user.id }
+        students = Student.select { |student| student.user_id == current_user.id }
         render json: students
     end
 
@@ -25,22 +25,22 @@ class StudentsController < ApplicationController
         end
     end
 
-    # def update
-    #     student = Student.find(params[:id])
-    #     student.update(student_params)
-    #     if student.valid?
-    #         render json: student
-    #     else
-    #         render json: student.errors, status 422
-    #     end
-    # end
+    def update
+        student = Student.find(params[:id])
+        student.update(student_params)
+        if student.valid?
+            render json: student
+        else
+            render json: student.errors, status: 422
+        end
+    end
 
     def destroy
         student = Student.find(params[:id])
         if student.destroy
             render json: student
         else
-            render json: student.errors
+            render json: student.errors, status: 422
         end
     end
     

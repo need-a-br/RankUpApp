@@ -12,53 +12,39 @@ import {
   Button,
 } from "reactstrap";
 
-const StudentShow = ({logged_in, deleteStudent, index }) => {
+const StudentShow = ({logged_in, showStudent, deleteStudent, currentStudent, index }) => {
   const { id } = useParams();
 
-  const [students, setStudents] = useState([]);
-
   useEffect(() => {
-    showStudent()
+    showStudent(id)
   }, [])
 
-  const showStudent = () => {
-    fetch(`/students/${+id}`)
-
-      .then((response) => response.json())
-      .then((payload) => {
-        console.log(payload)
-        setStudents(payload)
-      })
-      .catch((error) => console.log(error))
-  }
-
   const handleDelete = () => {
-    deleteStudent(id);
-    console.log(students);
+    deleteStudent(id)
   };
 
   return (
     <>
       <h1> View Student Here. </h1>
-      {!students.id && (
+      {currentStudent && !currentStudent.id && (
         <div>Selected student is not your student.</div>
       )}
 
       {logged_in && (
         <Card style={{ width: "18rem",}} key={index} >
-          <img alt="Card" src={students.image} />
+          <img alt="Card" src={currentStudent.image} />
           <CardBody>
-            <CardTitle tag="h5">{students.name}</CardTitle>
-            <CardText>Rank: {students.rank}</CardText>
+            <CardTitle tag="h5">{currentStudent.name}</CardTitle>
+            <CardText>Rank: {currentStudent.rank}</CardText>
           </CardBody>
           <ListGroup flush>
-            <ListGroupItem>Notes: {students.notes}</ListGroupItem>
+            <ListGroupItem>Notes: {currentStudent.notes}</ListGroupItem>
           </ListGroup>
           <CardBody>
             <NavLink to={"/protectedstudentindex"} className="nav-link">
               <Button>See All Students</Button>
             </NavLink>
-            <NavLink to={`/studentedit/${students.id}`} className="nav-link">
+            <NavLink to={`/studentedit/${currentStudent.id}`} className="nav-link">
               <Button>Update/Edit</Button>
             </NavLink>
             <DeleteModal handleDelete={handleDelete}/>
