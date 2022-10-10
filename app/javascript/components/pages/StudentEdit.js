@@ -1,17 +1,22 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Form, FormGroup, Input, Label, Button } from 'reactstrap'
 import { useParams, useNavigate } from 'react-router-dom'
 
-const StudentEdit = ({ students, updateStudent, logged_in }) => {
+const StudentEdit = ({ students, showStudent, updateStudent, currentStudent, logged_in }) => {
     
     const navigate = useNavigate()
 
     const { id } = useParams()
-    let currentStudent =  students?.find(student => student.id === +id)
 
-    console.log(students)
-    console.log(id)
-    console.log(currentStudent)
+    useEffect(() => {
+        showStudent(id)
+      }, [])
+
+    // let currentStudent =  students?.find(student => student.id === +id)
+
+    // console.log(students)
+    // console.log(id)
+    // console.log(currentStudent)
     const [ editStudent, setEditStudent ] = useState(currentStudent)
 
     const handleChangeStudent = (e) => {
@@ -27,6 +32,9 @@ const StudentEdit = ({ students, updateStudent, logged_in }) => {
    
     return (
         <>
+            {currentStudent && !currentStudent.id && (
+                <div>Selected student is not your student.</div>
+            )}
         {logged_in && (
          <div className='container'>
             

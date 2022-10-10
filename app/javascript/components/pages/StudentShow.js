@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import DeleteModal from "../components/DeleteModal";
@@ -12,18 +12,24 @@ import {
   Button,
 } from "reactstrap";
 
-const StudentShow = ({ students, logged_in, deleteStudent, index }) => {
+const StudentShow = ({logged_in, showStudent, deleteStudent, currentStudent, index }) => {
   const { id } = useParams();
-  let currentStudent = students?.find((student) => student.id === +id);
+
+  useEffect(() => {
+    showStudent(id)
+  }, [])
 
   const handleDelete = () => {
-    deleteStudent(id);
-    console.log(currentStudent);
+    deleteStudent(id)
   };
 
   return (
     <>
       <h1> View Student Here. </h1>
+      {currentStudent && !currentStudent.id && (
+        <div>Selected student is not your student.</div>
+      )}
+
       {logged_in && (
         <Card style={{ width: "18rem",}} key={index} >
           <img alt="Card" src={currentStudent.image} />

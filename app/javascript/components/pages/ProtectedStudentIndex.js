@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from 'react'
 import {
   Card,
   CardBody,
@@ -10,7 +10,11 @@ import {
 } from "reactstrap";
 import { NavLink } from "react-router-dom";
 
-const ProtectedStudentIndex = ({ students }) => {
+const ProtectedStudentIndex = ({readStudents, students}) => {
+  
+  useEffect(() => {
+    readStudents()
+  }, [])
 
   return (
     <>
