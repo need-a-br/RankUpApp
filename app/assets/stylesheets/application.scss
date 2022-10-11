@@ -30,6 +30,7 @@
     background-color: lightgray !important;
     height: 8vmin;
     width: 100%;
+    text-decoration: none !important
   }
 
   a:link {
@@ -46,7 +47,7 @@
   
   a:hover, a:active {
     text-decoration: none;
-    color: black !important;
+    color: lightgreen !important;
   }
 
  button {
@@ -54,17 +55,34 @@
     height: 40px;
   }
 
-  footer {
-    padding: 10px;
-    display: inline-block;
-    position: fixed;
-    bottom: 0;
-    display: flex;
-    justify-content: space-around;
-    font-size: 15px;
-    background-color: lightgray;
-    width: 100%;
-    color: black;
-    height: 5vmin;
-    display: inline-block;
-  }
+footer {
+  padding: 10px;
+  display: inline-block;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  justify-content: space-around;
+  font-size: 15px;
+  background-color: lightgray;
+  width: 100%;
+  color: black;
+  height: 5vmin;
+  display: inline-block;
+}
+
+.form-body{
+  text-align: center;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  border: 1px solid lightgreen;
+  border-radius: 10px;
+  padding: 25px 25px 25px 25px;
+  font-family: "Lucida Console", "Courier New", monospace;
+  text-decoration: none !important;
+  background: url(RankUp_bg.jpeg) no-repeat;
+  background-size: cover;
+}
