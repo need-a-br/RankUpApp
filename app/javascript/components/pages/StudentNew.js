@@ -40,7 +40,32 @@ const StudentNew = ( { createStudent, logged_in }) => {
 
         <FormGroup>
           <Label for="rank">Rank</Label>
-          <Input type="string" name="rank" placeholder='Rank'onChange={handleChange} value={newStudent.rank} />
+          <Input type="select" name="rank" placeholder='Rank' onChange={handleChange} value={newStudent.rank}>
+          <option>
+              select student belt color
+            </option>
+            <option value="white">
+              white
+            </option>
+            <option value="yellow">
+              yellow
+            </option>
+            <option value="green">
+              green
+            </option>
+            <option value="blue">
+              blue
+            </option>
+            <option value="purple">
+              purple
+            </option>
+            <option value="brown">
+              brown
+            </option> 
+            <option value="black">
+              black
+            </option>   
+          </Input>
         </FormGroup>
         <FormGroup>
           <Label for="image">Image</Label>
