@@ -1,143 +1,75 @@
-## READ ME
-# This file will add all documentation for the RankUp app
+# **RankUp**
 
+## **Overview**
 
-# Environment Setup -
-    $ rails new rankupapp -d postgresql -T
-    $ cd rankupapp
-    $ rails db:create
+RankUp is a tracking app that seeks to optimize the way martial arts instructors can keep track of their students. It allows an instructor to see a list of their students and their ranks, as well as keep any notes about them all in one place.
+#
+### LIVE LINK : [RankUp](https://media.tenor.com/1y8zDc-ll-EAAAAd/3d-saul-saul-goodman.gif)
+#
 
-# add to github repo
-- Add the remote from team GitHub repository
-- Create a default branch (main)
-- Make an initial commit to the repository
+## Features
 
-# add Rspec
-    $ bundle add rspec-rails
-    $ rails generate rspec:install
+- Ability create a unique account to store user data.
 
-# add React
-    $ bundle add webpacker
-    $ bundle add react-rails
-    $ rails webpacker:install
-    $ rails webpacker:install:react
-    $ yarn add @babel/preset-react
-    $ yarn add @rails/activestorage
-    $ yarn add @rails/ujs
-    $ rails generate react:install
-    $ rails generate react:component App
+- Can view a list of all students on your account.
 
-# add Devise
-    $ bundle add devise
-    $ rails generate devise:install
-    $ rails generate devise User
-    $ rails db:migrate
-    - in config/environments/development.rb
-        add 
-            config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
-    - in config/initializers/devise.rb
-        add
-            # Find this line:
-            config.sign_out_via = :delete
-            # And replace it with this:
-            config.sign_out_via = :get
+- Can view a specific student.
 
-# Rails Routing
-    $ rails generate controller Home index
-    - in app/views/home/index.html.erb
-        add
-            <%= react_component 'App', {
-            logged_in: user_signed_in?,
-            current_user: current_user,
-            new_user_route: new_user_registration_path, sign_in_route: new_user_session_path, sign_out_route: destroy_user_session_path
-            } %>
-    - in app/views/layouts/application.html.erb
-        add
-            // Find this line:
-            <%= javascript_importmap_tags %>
+- Can Edit/Update specific student attributes.
 
-            // And replace it with this:
-            <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-    - in config/routes.rb
-        add
-            get '*path', to: 'home#index', constraints: ->(request){ request.format.html? }
-            root 'home#index'
+- Can delete a student's user data.
+#
+## Running Locally
 
-# React Routing
-    $ yarn add react-router-dom
-    in app/javascript/components/App.js
-        add
-            import { BrowserRouter, Routes, Route } from "react-router-dom"
+- After cloning from github, first 
+1. Clone project locally,
+2. CD into the project directory,
+3. Run  `yarn` in your terminal,
+4. Run  `bundle` in your terminal,
+5. Have Fun!
+#
+## Tech Used / Dependencies
 
-# Adding Reactstrap
-    $ bundle add bootstrap
-    $ mv app/assets/stylesheets/application.css app/assets/stylesheets/application.scss
-    $ yarn add reactstrap
-    - in app/assets/stylesheets/application.scss
-        add
-            @import "bootstrap";
+### This is a React In Rails app.
 
-# Rankup Resourse
-    * the Devise user model is going to thave an association with the Student model
-$ rails g resource Student name:string notes:text rank:string image:text user_id:integer
-$ rails db:migrate
+- Dependencies include:
 
-# User and Student Associations
-*the students will belong to a user and the user will have many students
-    -in app/models/student.rb
-        add
-            class Student < ApplicationRecord
-            belongs_to :user
-            end
-    -in app/models/user.rb
-        add
-            class User < ApplicationRecord
-            # Include default devise modules. Others available are:
-            # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-            devise :database_authenticatable, :registerable,
-                    :recoverable, :rememberable, :validatable
-            has_many :students
-            end                
-## App.js for starter
-*starter app js if we want for bare bones need*
-    -in app/javascript/components/App.js
-        add
-            import React from "react"
+1. [RSpec](https://rspec.info/)
+2. [React](https://reactjs.org/)
+3. [ReactStrap](https://reactstrap.github.io/?path=/story/home-installation--page)
+4. [Devise](https://rubygems.org/gems/devise/versions/4.8.1)
+#
+### Rspec
 
-            const App = ({
-            logged_in,
-            current_user,
-            new_user_route,
-            sign_in_route,
-            sign_out_route
-            }) => {
-            console.log("logged_in:", logged_in)
-            console.log("current_user:", current_user)
-            console.log("new_user_route:", new_user_route)
-            console.log("sign_in_route:", sign_in_route)
-            console.log("sign_out_route:", sign_out_route)
-            return (
-                <>
-                <h1>Student App</h1>
-                </>
-            )
-            }
+- Commands run to initialize RSpec
 
-            export default App
+- $ `bundle add rspec-rails`
+- $ `rails generate rspec:install`
 
+### React
+- Commands run to initialize React:
 
-## Icebox Testing
-# for protected index
+- $ `bundle add webpacker`
+- $ `bundle add react-rails`
+- $ `rails webpacker:install`
+- $ `rails webpacker:install:react`
+- $ `yarn add @babel/preset-react`
+- $ `yarn add @rails/activestorage`
+- $ `yarn add @rails/ujs`
+- $ `rails generate react:install`
+- $ `rails generate react:component App`
 
-//   it("shows student data", () => {
-//     render(
-//       <BrowserRouter>
-//         <ProtectedStudentIndex students={mockStudents} />
-//       </BrowserRouter>
-//     )
-//     mockStudents.forEach((student) => {
-//         const studentName = screen.getByText(student.name)
-//         expect(studentName).toBeInTheDocument()
-        
-//     })
-//   })
+### Devise 
+
+- Commands run to initialize Devise:
+
+- $ `bundle add devise`
+- $ `rails generate devise:install`
+- $ `rails generate devise User`
+- $ `rails db:migrate`
+#
+## Contributors:
+- [🗿 Sam Scott, Product Manager. 🗿](https://github.com/sanjuel)
+- [😊 Cathrine Carreon, Design Lead. 😊](https://github.com/CathrineC)
+- [😂 Vanessa Bastien, Project Manager. 😂](https://github.com/VKathryn)
+- [🍆 Clifford Roecker, "Tech Lead". 🍆](https://github.com/roeckerc)
