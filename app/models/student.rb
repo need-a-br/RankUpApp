@@ -10,7 +10,7 @@ class Student < ApplicationRecord
     }, prefix: "belt"
     belongs_to :user
     validates :name, presence: true
-    validates :name, uniqueness: true
+    validates :name, :uniqueness => { :scope => :user_id }
     validates :notes, presence: true
     validates :rank, presence: true
     validates :image, presence: true
