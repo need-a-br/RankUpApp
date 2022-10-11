@@ -26,7 +26,23 @@ RSpec.describe "Students" do
       expect(student.length).to eq 1
     end
   end
+  describe "PATCH /update" do
+    it "updates an exisiting student and does not crash" do
+      sign_in(user)
+      student = Student.last
+      student_params = {
+        student: {
+          name: "donovan"
+        }
+      }
 
+      patch "/students/#{student.id}", params: student_params
+
+      student = JSON.parse(response.body)
+      expect(response).to have_http_status(200)
+      
+    end
+  end
   describe "PATCH /update" do
     it "updates an exisiting student" do
       sign_in(user)
