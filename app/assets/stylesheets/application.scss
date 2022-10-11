@@ -27,26 +27,29 @@
 
  header {
     padding: 1px;
-    background-color: lightgray !important;
+    background-color: black!important;
     height: 8vmin;
     width: 100%;
+    text-decoration: none !important;
+    color: white !important
   }
 
   a:link {
     text-decoration: none !important;
-    color: black;
+    color:lightgrey !important;
     padding: 5px;
   }
 
   a:visited {
     text-decoration: none !important;
-    color: grey;
+    color: white !important;
     padding: 5px;
   }
   
   a:hover, a:active {
     text-decoration: none;
-    color: black !important;
+    color: lightgreen !important;
+    background-color: black;
   }
 
  button {
@@ -55,16 +58,33 @@
   }
 
   footer {
-    padding: 10px;
-    display: inline-block;
-    position: fixed;
-    bottom: 0;
-    display: flex;
-    justify-content: space-around;
-    font-size: 15px;
-    background-color: lightgray;
-    width: 100%;
-    color: black;
-    height: 5vmin;
-    display: inline-block;
-  }
+  padding: 10px;
+  display: inline-block;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  justify-content: space-around;
+  font-size: 15px;
+  background-color: lightgray;
+  width: 100%;
+  color: white !important ;
+  height: 5vmin;
+  display: inline-block;
+}
+
+.form-body{
+  text-align: center;
+  margin: 0;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  border: 1px solid lightgreen;
+  border-radius: 10px;
+  padding: 25px 25px 25px 25px;
+  font-family: "Lucida Console", "Courier New", monospace;
+  text-decoration: none !important;
+  background: url(RankUp_bg.png) no-repeat;
+  background-size: cover;
+}
