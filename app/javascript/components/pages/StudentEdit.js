@@ -12,11 +12,6 @@ const StudentEdit = ({ students, showStudent, updateStudent, currentStudent, log
         showStudent(id)
       }, [])
 
-    // let currentStudent =  students?.find(student => student.id === +id)
-
-    // console.log(students)
-    // console.log(id)
-    // console.log(currentStudent)
     const [ editStudent, setEditStudent ] = useState(currentStudent)
 
     const handleChangeStudent = (e) => {
