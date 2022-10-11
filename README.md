@@ -4,7 +4,7 @@
 
 RankUp is a tracking app that seeks to optimize the way martial arts instructors can keep track of their students. It allows an instructor to see a list of their students and their ranks, as well as keep any notes about them all in one place.
 #
-### LIVE LINK : [RankUp](https://media.tenor.com/1y8zDc-ll-EAAAAd/3d-saul-saul-goodman.gif)
+### LIVE LINK : [RankUp](https://rankupapp.herokuapp.com/)
 #
 
 ## Features
