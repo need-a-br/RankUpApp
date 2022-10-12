@@ -16,63 +16,57 @@ const Navigation = ({
           {!logged_in && (
             <NavItem>
               <NavLink to="/" className="nav-link">
-                Home
+              <img src="photos/Home.png" style={{height: 50}}/>
               </NavLink>
             </NavItem>
           )}
           {!logged_in && (
             <NavItem>
               <Link to="/#about-us" className="nav-link">
-                About Us
+              <img src="photos/About_Us.png" style={{height: 50}}/>
               </Link>
             </NavItem>
           )}
           {!logged_in && (
             <NavItem>
               <Link to="/#contact-us" className="nav-link">
-                Contact Us
+              <img src="photos/Contact_Us.png" style={{height: 50}}/>
               </Link>
             </NavItem>
           )}
           {!logged_in && (
             <NavItem>
-              <Button outline size="sm">
                 <a href={sign_in_route} className="nav-link">
-                  Log In
+                <img src="photos/Log_In.png" style={{height: 50}}/>
                 </a>
-              </Button>
             </NavItem>
           )}
           {!logged_in && (
             <NavItem>
-              <Button outline size="sm">
                 <a href={new_user_route} className="nav-link">
-                  Register
+                <img src="photos/Register.png" style={{height: 50}}/>
                 </a>
-              </Button>
             </NavItem>
           )}
           {logged_in && (
             <NavItem>
               <NavLink to="/protectedstudentindex" className="nav-link">
-                See My Students
+              <img src="photos/My_Students.png" style={{height: 50}}/>
               </NavLink>
             </NavItem>
           )}
           {logged_in && (
             <NavItem>
               <NavLink to="/studentnew" className="nav-link">
-                Add a student
+              <img src="photos/Add_Student.png" style={{height: 50}}/>
               </NavLink>
             </NavItem>
           )}
           {logged_in && (
             <NavItem>
-              <Button outline size="sm">
                 <a href={sign_out_route} className="nav-link">
-                  Log Out
+                <img src="photos/Log_Out.png" style={{height: 50}}/>
                 </a>
-              </Button>
             </NavItem>
           )}
         </Nav>

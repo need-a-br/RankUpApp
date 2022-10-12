@@ -8,8 +8,8 @@ const Header = (props) => {
   return (
     <header>
       <Navbar className="my-2" light>
-        <NavbarBrand>
-          RankUp
+        <NavbarBrand href="/">
+          <img src="photos/RankUp_Logo.png"  style={{height: 80}}/>
         </NavbarBrand>
         <NavItem className="nav-link"><Navigation {...props} /> </NavItem>
       </Navbar>  

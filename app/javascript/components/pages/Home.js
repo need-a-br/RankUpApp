@@ -9,45 +9,31 @@ const Home = (props) => {
         <Card inverse className="home_image">
           <CardImg
             alt="Home Page Photo"
-            src="https://i.pinimg.com/originals/29/a5/70/29a570101f9ac3d98d3c54b3d11cfbec.jpg"
-            style={{height: 700}}
-            width="100%"
+            src="photos/Home_Image.png"
           />
           <CardImgOverlay>
-            <CardTitle tag="h5">
-              Welcome to RankUp!
-            </CardTitle>
-            <CardText>
-              Join RankUp to easily findout the rank of your students and any progress notes you have for each one of them.
-              <br/> 
-              Register Now! 
-              <br/>
-              For registered users, simply click on Log In.
-            </CardText>
-            <CardText>
+        
+            <CardText className="home_button">
               {!props.logged_in && (
                 <>
                   <NavItem className="nav-link">
-                    <Button outline size="sm"> 
-                      <a href={props.sign_in_route} className="nav-link">
-                        Log In
-                      </a>
-                    </Button>
+                    <a href={props.sign_in_route} className="nav-link">
+                      <img src="photos/Log_In.png" style={{height: 50}}/>
+                    </a>
                   </NavItem>
                 </>
               )}
               {!props.logged_in && (
                 <>
                   <NavItem className="nav-link">
-                    <Button outline size="sm"> 
-                      <a href={props.new_user_route} >
-                        Register
-                      </a>
-                    </Button>
+                    <a href={props.sign_in_route} className="nav-link">
+                      <img src="photos/Register.png" style={{height: 50}}/>
+                    </a>
                   </NavItem>
                 </>
               )}
             </CardText>
+           
           </CardImgOverlay>
         </Card>
       </div>
@@ -55,18 +41,18 @@ const Home = (props) => {
       <br/><br/>
 
       <div id="about-us">
-        <Card body color="secondary" inverse style={{ width: '50rem' }} className="cards">
+        <Card inverse className="about_us">
           <CardBody>
-            <CardTitle tag="h5">About Us</CardTitle>
-              <CardText>
-                RankUp is a tracking app that seeks to optimize the way martial arts instructors can keep track of their students. It allows an instructor to see a list of their students and their ranks, as well as keep any notes about them all in one place.              
+            <CardTitle tag="h5"><img src="photos/AboutUs_Image.png" style={{height: 200}}/></CardTitle>
+              <CardText tag="h5">
+              RankUp was created to help instructors save time and increase efficiency. It was designed to enable you to quickly organize and keep track of your students as they progress through their martial arts journey. Once you have added each student to your profile, you can see all of their data with one click! Updating any details, such as rank, or indicating if the student is ready to test, are one simple click away.              
               </CardText>
           </CardBody>
         </Card>
       </div>
 
       <div>
-        <Card body color="light" style={{ width: '50rem' }} className="cards">
+        <Card body color="secondary" className="cards">
           <CardBody>
             <CardTitle tag="h5">Track the Rank of Your Student</CardTitle>
               <CardText>
@@ -81,14 +67,14 @@ const Home = (props) => {
         </Card>
       </div>
       
-      <div id="contact-us" style={{ width: '50rem' }} className="cards">
-        <Card body color="dark" inverse>
+      <div id="contact-us" >
+        <Card className="contact_us">
           <CardBody>
-            <CardTitle tag="h5">Contact Us</CardTitle>
-              <CardText>
-              Team Need a Br
-              E-mail: teamneedabr@gmail.com         
-              </CardText>
+            <CardTitle tag="h5"><img src="photos/ContactUs_Image.png" style={{height: 200}}/></CardTitle>
+             
+              <h5>Team Need a BR</h5>
+              <h6>E-mail: teamneedabr@gmail.com</h6>         
+             
           </CardBody>
         </Card>
       </div>
