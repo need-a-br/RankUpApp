@@ -15,76 +15,108 @@
  */
  @import "bootstrap";
 
- .home_image {
-    margin: 0 auto;
-    width: fit-content;
-  }
+.about_us {
+margin: 0 auto;
+text-align: center;
+background-color: rgb(102, 3, 3)!important;
+font-family: "Lucida Console", monospace;
+}
 
- .cards {
-    margin: 0 auto;
-    text-align: center;
-  }
+a:link {
+text-decoration: none !important;
+color:black !important;
+padding: 5px;
+font-family: "Courier New", monospace;
+}
 
- header {
-    padding: 1px;
-    background-color: black!important;
-    height: 8vmin;
-    width: 100%;
-    text-decoration: none !important;
-    color: white !important
-  }
+a:visited {
+text-decoration: none !important;
+color: rgb(87, 1, 1)!important;
+padding: 5px;
+}
 
-  a:link {
-    text-decoration: none !important;
-    color:lightgrey !important;
-    padding: 5px;
-  }
+a:hover, a:active {
+text-decoration: none;
+color: rgb(87, 1, 1)!important;
+}
 
-  a:visited {
-    text-decoration: none !important;
-    color: white !important;
-    padding: 5px;
-  }
-  
-  a:hover, a:active {
-    text-decoration: none;
-    color: lightgreen !important;
-    background-color: black;
-  }
+button {
+width: 150px;
+height: 40px;
+}
 
- button {
-    width: 150px;
-    height: 40px;
-  }
+.cards {
+margin: 0 auto;
+text-align: center;
+font-family: "Lucida Console", monospace;
+}
 
-  footer {
-  padding: 10px;
-  display: inline-block;
-  position: fixed;
-  bottom: 0;
-  display: flex;
-  justify-content: space-around;
-  font-size: 15px;
-  background-color: lightgray;
-  width: 100%;
-  color: white !important ;
-  height: 5vmin;
-  display: inline-block;
+.contact_us{
+background-size: auto;
+border: none;
+margin: 0 auto;
+text-align: center;
+background-color: lightgrey!important;
+font-family: "Lucida Console", monospace;
+color: rgb(87, 1, 1);
+}
+
+footer {
+padding: 10px;
+display: inline-block;
+bottom: 0;
+display: flex;
+justify-content: space-around;
+font-size: 15px;
+background-color: white;
+width: 100%;
+color: white !important ;
+height: 5vmin;
+display: inline-block;
+text-align: center;
 }
 
 .form-body{
-  text-align: center;
-  margin: 0;
-  position: absolute;
-  top: 30%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-  border: 1px solid lightgreen;
-  border-radius: 10px;
-  padding: 25px 25px 25px 25px;
-  font-family: "Lucida Console", "Courier New", monospace;
-  text-decoration: none !important;
-  background: url(RankUp_bg.png) no-repeat;
-  background-size: cover;
+text-align: center;
+margin: 0;
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+color: black;
+border: 1px solid rgb(95, 11, 15);
+border-radius: 10px;
+padding: 25px 25px 25px 25px;
+font-family: "Lucida Console", "Courier New", monospace;
+text-decoration: none !important;
+background-size: cover;
+}
+
+header {
+height: 10vmin;
+width: 100%;
+text-decoration: none !important; 
+margin: 0;
+position: sticky;
+
+}
+
+.home_image {
+background-size: auto;
+border: none;
+}
+
+.logo {
+margin-left: 20px;
+width: 20%;
+border-radius: 30px;
+}
+.home_button{
+
+text-align: center;
+margin: 0;
+position: absolute;
+top: 70%;
+left: 50%;
+transform: translate(-50%, -50%);
 }
