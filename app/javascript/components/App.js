@@ -9,7 +9,6 @@ import ProtectedStudentIndex from "./pages/ProtectedStudentIndex";
 import StudentShow from "./pages/StudentShow";
 import StudentNew from "./pages/StudentNew";
 import StudentEdit from "./pages/StudentEdit";
-// import mockStudents from "./MockStudents";
 import NotFound from "./pages/NotFound";
 
 const App = (props) => {
