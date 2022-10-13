@@ -4,14 +4,14 @@ const Developers = () => {
   return (
     <>
       <h3>Meet the Developers</h3>
-      <img src="https://avatars.githubusercontent.com/u/106039700?v=4" />
+      <img src="../photos/cathrine.jpeg" />
       <h2>Cathrine</h2>
       <p>
         Meet Cathrine, our stellar design lead! Cathrine enjoys making fun of
         people, collecting erasers and doesn’t suffer fools gladly. Her zoom
         backgrounds are the stuff of legends.
       </p>
-      <img src="https://avatars.githubusercontent.com/u/109927262?v=4" />
+      <img src="../photos/sam.jpeg" />
       <h2>Sam</h2>
       <p>
         Meet Sam, our product manager who keeps our app on track! An avid kung
@@ -19,7 +19,7 @@ const Developers = () => {
         collects Lego, like monkeys and hopes to live a secluded mountain life
         with his beloved girlfriend.
       </p>
-      <img src="https://avatars.githubusercontent.com/u/109927272?v=4" />
+      <img src="../photos/vanessa.jpeg" />
       <h2>Vanessa</h2>
       <p>
         Meet Vanessa, our project manager extraordinaire! She keeps us on track
@@ -27,7 +27,7 @@ const Developers = () => {
         cake, often asks questions before realizing she knows the answer, and is
         irritatingly grateful
       </p>
-      <img src="https://avatars.githubusercontent.com/u/102928549?v=4" />
+      <img src="../photos/cliff.jpeg" />
       <h2>Clifford</h2>
       <p>
         Meet Cliffie (boy, does he wish you would call him Ford!), our tech
