@@ -26,7 +26,7 @@ const Home = (props) => {
               {!props.logged_in && (
                 <>
                   <NavItem className="nav-link">
-                    <a href={props.sign_in_route} className="nav-link">
+                    <a href={props.new_user_route} className="nav-link">
                       <img src="photos/Register.png" style={{height: 50}}/>
                     </a>
                   </NavItem>

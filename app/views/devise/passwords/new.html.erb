@@ -2,7 +2,7 @@
 
   <div>
     </br>
-    <a href="/">Back to Home Page</a>
+    <h3><a href="/">Back to Home Page</a></h3
     </br>
     </br>
   </div>
@@ -12,7 +12,6 @@
 Enter email to receive reset password instructions.
 </br>
 </br>
-<h2>Forgot your password?</h2>
 
 <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
