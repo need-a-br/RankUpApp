@@ -19,19 +19,15 @@ const StudentEdit = ({
   const [editStudent, setEditStudent] = useState(currentStudent);
 
   const handleChangeStudent = (e) => {
-
     setEditStudent({ ...editStudent, [e.target.name]: e.target.value });
   };
 
   const handleReadyToTestChange = (e) => {
-    // let value = false
-
-    // if(e.target.value === "on") {
-    //   value = true
-    // }
-    // console.log(e.target.value)
-    setEditStudent({ ...editStudent, [e.target.name]: !editStudent.is_ready_for_eval })
-  }
+    setEditStudent({
+      ...editStudent,
+      [e.target.name]: !editStudent.is_ready_for_eval,
+    });
+  };
 
   const handleSubmit = () => {
     updateStudent(editStudent, currentStudent.id);
@@ -89,6 +85,40 @@ const StudentEdit = ({
               </Input>
             </FormGroup>
             <FormGroup>
+              <Label for="next_requirement">
+                Edit student's next requirement
+              </Label>
+              <Input
+                type="select"
+                name="next_requirement"
+                placeholder={currentStudent.next_requirement}
+                onChange={handleChangeStudent}
+                value={editStudent.next_requirement}
+                defaultValue={currentStudent.next_requirement || "technique1"}
+              >
+                <option>Next Requirement</option>
+                <option value="technique1">First Technique</option>
+                <option value="technique2">Second Technique</option>
+                <option value="technique3">Third Technique</option>
+                <option value="first_stripe">First Stripe</option>
+                <option value="technique4">Fourth Technique</option>
+                <option value="technique5">Fifth Technique</option>
+                <option value="technique6">Sixth Technique</option>
+                <option value="second_stripe">Second Stripe</option>
+                <option value="technique7">Seventh Technique</option>
+                <option value="technique8">Eighth Technique</option>
+                <option value="technique9">Ninth Technique</option>
+                <option value="third_stripe">Third Stripe</option>
+                <option value="technique10">Tenth Technique</option>
+                <option value="technique11">Eleventh Technique</option>
+                <option value="technique12">Twelfth Technique</option>
+                <option value="hand_form">Hand Form</option>
+                <option value="weapon_form">Weapon Form</option>
+                <option value="two_person_form">Two Person Form</option>
+                <option value="format">Format</option>
+              </Input>
+            </FormGroup>
+            <FormGroup>
               <Label for="image">Image URL for Student</Label>
               <Input
                 type="text"
@@ -99,12 +129,13 @@ const StudentEdit = ({
               />
             </FormGroup>
             <FormGroup switch>
-              <Input 
+              <Input
                 name="is_ready_for_eval"
-                type="switch" 
-                role="switch" 
-                defaultChecked={editStudent.is_ready_for_eval || false } 
-                onClick={handleReadyToTestChange} />
+                type="switch"
+                role="switch"
+                defaultChecked={editStudent.is_ready_for_eval || false}
+                onClick={handleReadyToTestChange}
+              />
               <Label check>Ready To Test?</Label>
             </FormGroup>
             <Button onClick={handleSubmit} name="submit">
