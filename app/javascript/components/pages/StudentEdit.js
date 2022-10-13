@@ -3,7 +3,6 @@ import { Form, FormGroup, Input, Label, Button } from "reactstrap";
 import { useParams, useNavigate } from "react-router-dom";
 
 const StudentEdit = ({
-  students,
   showStudent,
   updateStudent,
   currentStudent,
@@ -20,12 +19,22 @@ const StudentEdit = ({
   const [editStudent, setEditStudent] = useState(currentStudent);
 
   const handleChangeStudent = (e) => {
+
     setEditStudent({ ...editStudent, [e.target.name]: e.target.value });
   };
 
+  const handleReadyToTestChange = (e) => {
+    // let value = false
+
+    // if(e.target.value === "on") {
+    //   value = true
+    // }
+    // console.log(e.target.value)
+    setEditStudent({ ...editStudent, [e.target.name]: !editStudent.is_ready_for_eval })
+  }
+
   const handleSubmit = () => {
     updateStudent(editStudent, currentStudent.id);
-    console.log(editStudent);
     alert("Student profile has been updated!");
     navigate(`/studentshow/${id}`);
   };
@@ -67,7 +76,7 @@ const StudentEdit = ({
                 placeholder={currentStudent.rank}
                 onChange={handleChangeStudent}
                 value={editStudent.rank}
-                defaultValue={currentStudent.rank}
+                defaultValue={currentStudent.rank || "white"}
               >
                 <option>Select Student Belt Color</option>
                 <option value="white">White</option>
@@ -88,6 +97,15 @@ const StudentEdit = ({
                 onChange={handleChangeStudent}
                 value={editStudent.image}
               />
+            </FormGroup>
+            <FormGroup switch>
+              <Input 
+                name="is_ready_for_eval"
+                type="switch" 
+                role="switch" 
+                defaultChecked={editStudent.is_ready_for_eval || false } 
+                onClick={handleReadyToTestChange} />
+              <Label check>Ready To Test?</Label>
             </FormGroup>
             <Button onClick={handleSubmit} name="submit">
               Submit

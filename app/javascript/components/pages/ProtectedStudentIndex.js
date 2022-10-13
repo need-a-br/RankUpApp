@@ -7,6 +7,9 @@ import {
   ListGroup,
   ListGroupItem,
   Button,
+
+  CardImg,
+  CardImgOverlay,
   Row,
   Col,
   Container,
@@ -24,13 +27,19 @@ const ProtectedStudentIndex = ({readStudents, students}) => {
   return (
     <>
       <h1>List of Your Students</h1>
-
-      <div>
+      
+         <div>
       <Container className="student_cards" >
       <Row xs={1} md={3}>
-        {students?.map((student, index) => {
-          return (
-            <Card body className="my-2" key={index} style={{maxWidth: 250}}>
+      
+      {students?.map((student, index) => {
+        return (
+                <Card body className="my-2" key={index} style={{maxWidth: 250}}>
+             <CardImgOverlay style={{ height: "18rem",}}>
+          {student.is_ready_for_eval === true && (
+            <CardImg src="../photos/test.png"/>
+          )}
+          </CardImgOverlay>
             <CardImg alt="Card" src={student.image} />
             <CardBody>
               <CardTitle tag="h5">{student.name}</CardTitle>

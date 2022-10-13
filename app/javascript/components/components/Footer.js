@@ -7,7 +7,7 @@ const Footer = () => {
       <footer>
       <NavItem>
         <NavLink href="/developers" className="nav-link">
-        <img src="photos/Footer.png" style={{height: 80}}/>
+        <img src="../photos/Footer.png" style={{height: 80}}/>
         </NavLink>
       </NavItem>          
       </footer>

@@ -10,6 +10,8 @@ import {
   ListGroup,
   ListGroupItem,
   Button,
+  CardImgOverlay,
+  CardImg
 } from "reactstrap";
 
 const StudentShow = ({logged_in, showStudent, deleteStudent, currentStudent, index }) => {
@@ -32,7 +34,12 @@ const StudentShow = ({logged_in, showStudent, deleteStudent, currentStudent, ind
 
       {logged_in && (
         <Card style={{ width: "18rem",}} key={index} >
-          <img alt="Card" src={currentStudent.image} />
+          <CardImg alt="Card" src={currentStudent.image} />
+          <CardImgOverlay style={{ height: "18rem",}}>
+          {currentStudent.is_ready_for_eval === true && (
+            <CardImg src="../photos/test.png"/>
+          )}
+          </CardImgOverlay>
           <CardBody>
             <CardTitle tag="h5">{currentStudent.name}</CardTitle>
             <CardText>Rank: {currentStudent.rank}</CardText>
