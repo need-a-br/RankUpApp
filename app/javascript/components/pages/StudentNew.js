@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { Form, FormGroup, Input, Label, Button } from "reactstrap";
+import { Form, FormGroup, Input, Label, Button, CardImg } from "reactstrap";
 import { useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const StudentNew = ({ createStudent, logged_in }) => {
   const navigate = useNavigate();
@@ -17,16 +18,15 @@ const StudentNew = ({ createStudent, logged_in }) => {
 
   const handleSubmit = () => {
     createStudent(newStudent);
-    alert("Student has been added!");
     navigate("/protectedstudentindex");
   };
 
   return (
     <>
-      <h3>Add a Student</h3>
+      <h1>Add a Student</h1>
       {logged_in && (
-        <div>
-          Complete the form to add a Student. When done, click on Submit button
+        <div className="container">
+          <h4>Complete the form to add a Student. When done, click on Submit button</h4>
           <Form>
             <FormGroup>
               <Label for="name">Name</Label>
@@ -79,9 +79,9 @@ const StudentNew = ({ createStudent, logged_in }) => {
                 value={newStudent.image}
               />
             </FormGroup>
-            <Button onClick={handleSubmit} name="submit">
-              Submit
-            </Button>
+         
+            <CardImg  onClick={handleSubmit} name="submit" src="../photos/AddStudent.png" style={{ height: 50 }}/>
+          
           </Form>
         </div>
       )}

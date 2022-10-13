@@ -76,7 +76,7 @@ const StudentEdit = ({
                 placeholder={currentStudent.rank}
                 onChange={handleChangeStudent}
                 value={editStudent.rank}
-                defaultValue={currentStudent.rank || "white"}
+                defaultValue={currentStudent.rank}
               >
                 <option>Select Student Belt Color</option>
                 <option value="white">White</option>
