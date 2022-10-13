@@ -68,20 +68,20 @@ footer {
   display: inline-block;
   bottom: 0;
   display: flex;
-  // justify-content: space-around;
   background-color: white;
   width: 100%;
   color: white !important ;
-  // height: 5vmin;
   display: inline-block;
   text-align: center;
+  position: relative;
+
 }
 
 .form-body{
   text-align: center;
   margin: 0;
   position: absolute;
-  top: 60%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   color: black;
@@ -137,12 +137,27 @@ header {
 .student_cards {
   text-align: center;
   font-family: "Courier New", monospace;
-  color: whitesmoke;
+  color: rgb(87, 1, 1);
   position: relative;
   padding: 20px 20px 20px 20px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content:space-around;
   gap: 20%;
 }
+
+.student_show {
+  padding: 2%;
+  font-family: "Courier New", monospace;
+}
+
+.show_row {
+  padding: 20px 20px 20px 20px;
+  background-color: none !important
+}
+
+.show_button {
+  padding: 20px 20px 0px 0px;
+}
+
