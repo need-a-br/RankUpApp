@@ -59,16 +59,45 @@ const StudentNew = ({ createStudent, logged_in }) => {
                 onChange={handleChange}
                 value={newStudent.rank}
               >
-                <option>select student belt color</option>
-                <option value="white">white</option>
-                <option value="yellow">yellow</option>
-                <option value="green">green</option>
-                <option value="blue">blue</option>
-                <option value="purple">purple</option>
-                <option value="brown">brown</option>
-                <option value="black">black</option>
+                <option>Select Student Belt Color</option>
+                <option value="white">White</option>
+                <option value="yellow">Yellow</option>
+                <option value="green">Green</option>
+                <option value="blue">Blue</option>
+                <option value="purple">Purple</option>
+                <option value="brown">Brown</option>
+                <option value="black">Black</option>
               </Input>
             </FormGroup>
+            <Label for="next_requirement">Next Requirement</Label>
+            <Input
+              type="select"
+              name="next_requirement"
+              placeholder="Next Requirement"
+              onChange={handleChange}
+              value={newStudent.next_requirement}
+            >
+              <option>Next Requirement</option>
+              <option value="technique1">First Technique</option>
+              <option value="technique2">Second Technique</option>
+              <option value="technique3">Third Technique</option>
+              <option value="first_stripe">First Stripe</option>
+              <option value="technique4">Fourth Technique</option>
+              <option value="technique5">Fifth Technique</option>
+              <option value="technique6">Sixth Technique</option>
+              <option value="second_stripe">Second Stripe</option>
+              <option value="technique7">Seventh Technique</option>
+              <option value="technique8">Eighth Technique</option>
+              <option value="technique9">Ninth Technique</option>
+              <option value="third_stripe">Third Stripe</option>
+              <option value="technique10">Tenth Technique</option>
+              <option value="technique11">Eleventh Technique</option>
+              <option value="technique12">Twelfth Technique</option>
+              <option value="hand_form">Hand Form</option>
+              <option value="weapon_form">Weapon Form</option>
+              <option value="two_person_form">Two Person Form</option>
+              <option value="format">Format</option>
+            </Input>
             <FormGroup>
               <Label for="image">Image</Label>
               <Input
