@@ -13,7 +13,8 @@ import {
   CardGroup,
   CardImg,
   Row,
-  Col
+  Col,
+  CardImgOverlay
 } from "reactstrap";
 
 const StudentShow = ({logged_in, showStudent, deleteStudent, currentStudent, index }) => {
@@ -42,6 +43,11 @@ const StudentShow = ({logged_in, showStudent, deleteStudent, currentStudent, ind
                 src={currentStudent.image}
                 top width="100%"
               />
+              <CardImgOverlay style={{ height: "18rem",}}>
+          {currentStudent.is_ready_for_eval === true && (
+            <CardImg src="../photos/test.png"/>
+          )}
+          </CardImgOverlay>
             <CardBody>
             <Row xs="3">
               <Col className="show_button">

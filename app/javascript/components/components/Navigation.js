@@ -16,21 +16,21 @@ const Navigation = ({
           {!logged_in && (
             <NavItem>
               <NavLink to="/" className="nav-link">
-              <img src="photos/Home.png" style={{height: 50}}/>
+              <img src="../photos/Home.png" style={{height: 50}}/>
               </NavLink>
             </NavItem>
           )}
           {!logged_in && (
             <NavItem>
               <Link to="/#about-us" className="nav-link">
-              <img src="photos/About_Us.png" style={{height: 50}}/>
+              <img src="../photos/About_Us.png" style={{height: 50}}/>
               </Link>
             </NavItem>
           )}
           {!logged_in && (
             <NavItem>
               <Link to="/#contact-us" className="nav-link">
-              <img src="photos/Contact_Us.png" style={{height: 50}}/>
+              <img src="../photos/Contact_Us.png" style={{height: 50}}/>
               </Link>
             </NavItem>
           )}

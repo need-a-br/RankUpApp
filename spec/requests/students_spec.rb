@@ -9,7 +9,7 @@ RSpec.describe "Students" do
     Student.create(
       name: "Daniel LaRusso",
       notes: "Became a black belt in like 3 days",
-      rank: "Black Belt",
+      rank: "black",
       image: "https://mediaproxy.salon.com/width/1200/https://media.salon.com/2015/08/daniel-the-bully-karate-kid.jpg",
       user_id: user.id
     )
@@ -68,7 +68,7 @@ RSpec.describe "Students" do
         student: {
           name: "Johnny BGoode",
           notes: "Became a black belt in like 3 days",
-          rank: "Black Belt",
+          rank: "black",
           image: "https://mediaproxy.salon.com/width/1200/https://media.salon.com/2015/08/daniel-the-bully-karate-kid.jpg",
           user_id: user.id
         }
