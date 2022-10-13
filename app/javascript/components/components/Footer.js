@@ -1,10 +1,15 @@
 import React from "react"
+import { NavItem, NavLink } from "reactstrap"
 
 const Footer = () => {
   return (
     <>
       <footer>
-          <img src="photos/RankUp_Logo.png" style={{height: 40}}/>
+      <NavItem>
+        <NavLink href="/developers" className="nav-link">
+        <img src="photos/Footer.png" style={{height: 80}}/>
+        </NavLink>
+      </NavItem>          
       </footer>
     </>
   )

@@ -7,6 +7,11 @@ import {
   ListGroup,
   ListGroupItem,
   Button,
+  Row,
+  Col,
+  Container,
+  CardImg,
+  CardGroup
 } from "reactstrap";
 import { NavLink } from "react-router-dom";
 
@@ -18,26 +23,35 @@ const ProtectedStudentIndex = ({readStudents, students}) => {
 
   return (
     <>
-      <h1>View Your Students Here.</h1>
-      {students?.map((student, index) => {
-        return (
-          <Card style={{ width: "18rem", }} key={index} >
-            <img alt="Card" src={student.image} />
+      <h1>List of Your Students</h1>
+
+      <div>
+      <Container className="student_cards" >
+      <Row xs={1} md={3}>
+        {students?.map((student, index) => {
+          return (
+            <Card body className="my-2" key={index} style={{maxWidth: 250}}>
+            <CardImg alt="Card" src={student.image} />
             <CardBody>
               <CardTitle tag="h5">{student.name}</CardTitle>
               <CardText>Rank: {student.rank}</CardText>
             </CardBody>
-            <ListGroup flush>
-              <ListGroupItem>Notes: {student.notes}</ListGroupItem>
-            </ListGroup>
+              <ListGroupItem>
+                Notes: {student.notes}
+              </ListGroupItem>
             <CardBody>
               <NavLink to={`/studentshow/${student.id}`} className="nav-link">
-                <Button>View More</Button>
+              <img src="photos/Full_Info.png" style={{height: 50}}/>
               </NavLink>
             </CardBody>
           </Card>
         );
       })}
+      </Row>
+
+      </Container>
+    </div>
+
     </>
   );
 };

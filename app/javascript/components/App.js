@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import React, { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-
+import Developers from "./pages/Developers";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Home from "./pages/Home";
@@ -9,7 +9,6 @@ import ProtectedStudentIndex from "./pages/ProtectedStudentIndex";
 import StudentShow from "./pages/StudentShow";
 import StudentNew from "./pages/StudentNew";
 import StudentEdit from "./pages/StudentEdit";
-// import mockStudents from "./MockStudents";
 import NotFound from "./pages/NotFound";
 
 const App = (props) => {
@@ -120,6 +119,7 @@ const App = (props) => {
           }
         />
         <Route path= "/*" element={<NotFound />} />
+        <Route path= "/developers" element={<Developers />} />
       </Routes>
       <Footer />
     </BrowserRouter>
