@@ -26,7 +26,7 @@ const StudentEdit = ({
   const handleSubmit = () => {
     updateStudent(editStudent, currentStudent.id);
     console.log(editStudent);
-    alert("Student profile has been updated!");
+    // alert("Student profile has been updated!");
     navigate(`/studentshow/${id}`);
   };
 

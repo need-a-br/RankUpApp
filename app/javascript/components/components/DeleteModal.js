@@ -11,9 +11,9 @@ const DeleteModal = ({ handleDelete }) => {
 
   return (
     <div>
-      <Button name="submit" onClick={toggle}>
-        Delete Profile
-      </Button>
+      <NavLink name="submit" onClick={toggle}>
+      <img src="../photos/Delete.png" style={{width: 150}}/>
+      </NavLink>
       <Modal toggle={toggle} isOpen={showModal}>
         <ModalHeader>Delete Confirmation</ModalHeader>
         <ModalBody>Are you sure you want to delete this profile?</ModalBody>
