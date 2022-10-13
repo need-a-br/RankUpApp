@@ -2,9 +2,7 @@
 
   <div>
     </br>
-    <a href="/">Back to Home Page</a>
-    </br>
-    </br>
+    <h3><a href="/">Back to Home Page</a></h3>
   </div>
   <body class="form-body">
 
@@ -12,7 +10,6 @@
 <h1>Sign up to RankUp</h1>
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
-  </br>
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>

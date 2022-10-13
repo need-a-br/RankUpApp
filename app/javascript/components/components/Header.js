@@ -7,7 +7,7 @@ import { NavLink } from "react-router-dom"
 const Header = (props) => {
   return (
     <header>
-      <Navbar className="my-2" light>
+      <Navbar light>
         <NavbarBrand href="/">
           <img src="../photos/RankUp_Logo.png"  style={{height: 80}}/>
         </NavbarBrand>

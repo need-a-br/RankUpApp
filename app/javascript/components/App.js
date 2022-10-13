@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import React, { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-
+import Developers from "./pages/Developers";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Home from "./pages/Home";
@@ -119,6 +119,7 @@ const App = (props) => {
           }
         />
         <Route path= "/*" element={<NotFound />} />
+        <Route path= "/developers" element={<Developers />} />
       </Routes>
       <Footer />
     </BrowserRouter>

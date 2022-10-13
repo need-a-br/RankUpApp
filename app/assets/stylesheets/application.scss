@@ -17,107 +17,132 @@
 
 
 .about_us {
-margin: 0 auto;
-text-align: center;
-background-color: rgb(102, 3, 3)!important;
-font-family: "Lucida Console", monospace;
+  margin: 0 auto;
+  text-align: center;
+  background-color: rgb(102, 3, 3)!important;
+  font-family: "Lucida Console", monospace;
 }
 
 a:link {
-text-decoration: none !important;
-color:black !important;
-padding: 5px;
-font-family: "Courier New", monospace;
+  text-decoration: none !important;
+  color:black !important;
+  padding: 5px;
+  font-family: "Courier New", monospace;
 }
 
 a:visited {
-text-decoration: none !important;
-color: rgb(87, 1, 1)!important;
-padding: 5px;
+  text-decoration: none !important;
+  color: rgb(87, 1, 1)!important;
+  padding: 5px;
 }
 
 a:hover, a:active {
-text-decoration: none;
-color: rgb(87, 1, 1)!important;
+  text-decoration: none;
+  color: rgb(87, 1, 1)!important;
 }
 
 button {
-width: 150px;
-height: 40px;
+  width: 150px;
+  height: 40px;
+  background-color: rgb(102, 3, 3)
 }
 
 .cards {
-margin: 0 auto;
-text-align: center;
-font-family: "Lucida Console", monospace;
+  margin: 0 auto;
+  text-align: center;
+  font-family: "Lucida Console", monospace;
+  background-color: black!important;
 }
 
 .contact_us{
-background-size: auto;
-border: none;
-margin: 0 auto;
-text-align: center;
-background-color: lightgrey!important;
-font-family: "Lucida Console", monospace;
-color: rgb(87, 1, 1);
+  background-size: auto;
+  border: none;
+  margin: 0 auto;
+  text-align: center;
+  background-color: lightgrey!important;
+  font-family: "Lucida Console", monospace;
+  color: rgb(87, 1, 1);
 }
 
 footer {
-padding: 10px;
-display: inline-block;
-bottom: 0;
-display: flex;
-justify-content: space-around;
-font-size: 15px;
-background-color: white;
-width: 100%;
-color: white !important ;
-height: 5vmin;
-display: inline-block;
-text-align: center;
+  display: inline-block;
+  bottom: 0;
+  display: flex;
+  // justify-content: space-around;
+  background-color: white;
+  width: 100%;
+  color: white !important ;
+  // height: 5vmin;
+  display: inline-block;
+  text-align: center;
 }
 
 .form-body{
-text-align: center;
-margin: 0;
-position: absolute;
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%);
-color: black;
-border: 1px solid rgb(95, 11, 15);
-border-radius: 10px;
-padding: 25px 25px 25px 25px;
-font-family: "Lucida Console", "Courier New", monospace;
-text-decoration: none !important;
-background-size: cover;
+  text-align: center;
+  margin: 0;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: black;
+  border: 1px solid rgb(95, 11, 15);
+  border-radius: 10px;
+  padding: 20px 20px 20px 20px;
+  font-family: "Courier New", monospace;
+  text-decoration: none !important;
+  background-size: cover;
+  background-image: url("Forms.png");
+  background-repeat: no-repeat;
+}
+
+h1 {
+  text-align: center;
+  font-family: "Courier New", monospace;
+  color: rgb(87, 1, 1);
 }
 
 header {
-height: 10vmin;
-width: 100%;
-text-decoration: none !important; 
-margin: 0;
-position: sticky;
-
+  height: 12vmin;
+  width: 100%;
+  text-decoration: none !important; 
+  margin: 0;
+  position: sticky;
+  background-color: none !important;
 }
 
 .home_image {
-background-size: auto;
-border: none;
+  background-size: auto;
+  border: none;
+}
+
+
+.home_button {
+  text-align: center;
+  margin: 0;
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .logo {
-margin-left: 20px;
-width: 20%;
-border-radius: 30px;
+  margin-left: 20px;
+  width: 20%;
+  border-radius: 30px;
 }
-.home_button{
 
-text-align: center;
-margin: 0;
-position: absolute;
-top: 70%;
-left: 50%;
-transform: translate(-50%, -50%);
+.my-2 {
+  background-image: url("Cards_bg.png")
+}
+.student_cards {
+  text-align: center;
+  font-family: "Courier New", monospace;
+  color: whitesmoke;
+  position: relative;
+  padding: 20px 20px 20px 20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 20%;
 }
