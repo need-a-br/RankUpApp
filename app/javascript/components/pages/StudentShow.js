@@ -35,7 +35,7 @@ const StudentShow = ({logged_in, showStudent, deleteStudent, currentStudent, ind
       {logged_in && (
         <Card style={{ width: "18rem",}} key={index} >
           <CardImg alt="Card" src={currentStudent.image} />
-          <CardImgOverlay>
+          <CardImgOverlay style={{ height: "18rem",}}>
           {currentStudent.is_ready_for_eval === true && (
             <CardImg src="../photos/test.png"/>
           )}

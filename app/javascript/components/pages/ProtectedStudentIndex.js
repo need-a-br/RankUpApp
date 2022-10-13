@@ -7,6 +7,8 @@ import {
   ListGroup,
   ListGroupItem,
   Button,
+  CardImg,
+  CardImgOverlay
 } from "reactstrap";
 import { NavLink } from "react-router-dom";
 
@@ -22,6 +24,11 @@ const ProtectedStudentIndex = ({readStudents, students}) => {
       {students?.map((student, index) => {
         return (
           <Card style={{ width: "18rem", }} key={index} >
+             <CardImgOverlay style={{ height: "18rem",}}>
+          {student.is_ready_for_eval === true && (
+            <CardImg src="../photos/test.png"/>
+          )}
+          </CardImgOverlay>
             <img alt="Card" src={student.image} />
             <CardBody>
               <CardTitle tag="h5">{student.name}</CardTitle>
