@@ -8,11 +8,14 @@ class Student < ApplicationRecord
         brown: "brown",
         black: "black"
     }, prefix: "belt"
+
     belongs_to :user
+    has_one_attached :avatar
+
     validates :name, presence: true
     validates :name, :uniqueness => { :scope => :user_id }
     validates :notes, presence: true
     validates :rank, presence: true
-    validates :image, presence: true
+    # validates :image, presence: true
     validates :user_id, presence: true
 end

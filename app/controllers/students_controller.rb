@@ -16,6 +16,7 @@ class StudentsController < ApplicationController
         if student.valid?
             render json: student
         else
+            puts student.errors.messages
             render json: student.errors, status: 422
         end
     end
@@ -41,7 +42,15 @@ class StudentsController < ApplicationController
     
     private
     def student_params
-        params.require(:student).permit(:name, :rank, :notes, :image, :is_ready_for_eval, :user_id)
+        params.require(:student).permit(
+            :avatar,
+            :image,
+            :is_ready_for_eval,
+            :name,
+            :notes,
+            :rank,
+            :user_id
+        )
     end
 
 end

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Form, FormGroup, Input, Label, Button } from "reactstrap";
+import { Form, FormGroup, Input, Label, Button, FormText } from "reactstrap";
 import { useNavigate } from "react-router-dom";
 
 const StudentNew = ({ createStudent, logged_in }) => {
@@ -12,7 +12,13 @@ const StudentNew = ({ createStudent, logged_in }) => {
   });
 
   const handleChange = (e) => {
-    setNewStudent({ ...newStudent, [e.target.name]: e.target.value });
+    let value;
+    if (e.target.name === "avatar") {
+      value = e.target.files[0]
+    } else {
+      value = e.target.value
+    }
+    setNewStudent({ ...newStudent, [e.target.name]: value });
   };
 
   const handleSubmit = () => {
@@ -70,14 +76,13 @@ const StudentNew = ({ createStudent, logged_in }) => {
               </Input>
             </FormGroup>
             <FormGroup>
-              <Label for="image">Image</Label>
+              <Label for="avatar">Avatar</Label>
               <Input
-                type="text"
-                name="image"
-                placeholder="URL of Image"
+                type="file"
+                name="avatar"
                 onChange={handleChange}
-                value={newStudent.image}
               />
+              <FormText>Upload Student Image</FormText>
             </FormGroup>
             <Button onClick={handleSubmit} name="submit">
               Submit
