@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Form, FormGroup, Input, Label, Button } from "reactstrap";
+import { Form, FormGroup, Input, Label, Button, CardImg, NavLink } from "reactstrap";
 import { useNavigate } from "react-router-dom";
 
 const StudentNew = ({ createStudent, logged_in }) => {
@@ -17,16 +17,17 @@ const StudentNew = ({ createStudent, logged_in }) => {
 
   const handleSubmit = () => {
     createStudent(newStudent);
-    alert("Student has been added!");
     navigate("/protectedstudentindex");
+    window.location.reload(false)
   };
 
   return (
-    <>
-      <h3>Add a Student</h3>
+    <div className="show_row">
+      <div className="add_container">
+      <h1 className="h1-2">Add a Student</h1>
       {logged_in && (
-        <div>
-          Complete the form to add a Student. When done, click on Submit button
+        <div >
+        <h4 className="h1-2">Complete the form to add a Student. When done, click on Submit button</h4>
           <Form>
             <FormGroup>
               <Label for="name">Name</Label>
@@ -40,18 +41,18 @@ const StudentNew = ({ createStudent, logged_in }) => {
             </FormGroup>
 
             <FormGroup>
-              <Label for="notes">Notes</Label>
+              <Label for="image">Image</Label>
               <Input
                 type="text"
-                name="notes"
-                placeholder="Notes"
+                name="image"
+                placeholder="URL of Image"
                 onChange={handleChange}
-                value={newStudent.notes}
+                value={newStudent.image}
               />
             </FormGroup>
 
             <FormGroup>
-              <Label for="rank">Rank</Label>
+              <Label for="rank">Rank/Belt</Label>
               <Input
                 type="select"
                 name="rank"
@@ -99,23 +100,27 @@ const StudentNew = ({ createStudent, logged_in }) => {
               <option value="format">Format</option>
             </Input>
             <FormGroup>
-              <Label for="image">Image</Label>
+            </FormGroup>
+            <FormGroup>
+              <Label for="notes">Notes</Label>
               <Input
                 type="text"
-                name="image"
-                placeholder="URL of Image"
+                name="notes"
+                placeholder="Notes"
                 onChange={handleChange}
-                value={newStudent.image}
+                value={newStudent.notes}
               />
             </FormGroup>
-            <Button onClick={handleSubmit} name="submit">
-              Submit
+
+            <Button onClick={handleSubmit} name="submit" className="button">
+              Add Student
             </Button>
           </Form>
         </div>
       )}
       {!logged_in && <h1>Please Log In To Continue</h1>}
-    </>
+      </div>
+    </div>
   );
 };
 

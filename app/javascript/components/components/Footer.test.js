@@ -12,7 +12,7 @@ describe("<Footer />", () => {
             <Footer/>
             </BrowserRouter>
         )
-        const footerText = screen.getByText(/rankup/i)
+        const footerText = screen.getByAltText(/Meet the Developers/i)
         expect(footerText).toBeInTheDocument()
     })
 })

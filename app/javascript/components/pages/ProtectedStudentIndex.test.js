@@ -12,7 +12,7 @@ describe("<ProtectedStudentIndex />", () => {
       </BrowserRouter>,
       div
       )
-     const waterPark = screen.getByText("View Your Students Here.")
+     const waterPark = screen.getByText("List of Your Students")
       expect(waterPark).toBeInTheDocument()
   })
 })
