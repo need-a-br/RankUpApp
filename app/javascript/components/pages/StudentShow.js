@@ -30,25 +30,43 @@ const StudentShow = ({logged_in, showStudent, deleteStudent, currentStudent, ind
 
   return (
     <>
-      <h1>Profile of {currentStudent.name}</h1>
+      <h1>Student Profile</h1>
       {currentStudent && !currentStudent.id && (
         <div>Selected student is not your student.</div>
       )}
 
       {logged_in && (
-        <CardGroup className="show_row">
-          <Card style={{ width: "18rem",}} key={index}>
+        <CardGroup className="show_row"  >
+          <Card style={{ width: "15rem"}} key={index}>
             <CardImg
                 alt="Student Image"
                 src={currentStudent.image}
                 top width="100%"
+                className="student_cards"
               />
-              <CardImgOverlay style={{ height: "18rem",}}>
-          {currentStudent.is_ready_for_eval === true && (
-            <CardImg src="../photos/test.png"/>
-          )}
-          </CardImgOverlay>
+            <CardImgOverlay className="ready_stamp">
+              {currentStudent.is_ready_for_eval === true && (
+                <CardImg src="../photos/test.png"/>
+              )}
+            </CardImgOverlay>
+          </Card>
+          <Card className="student_show">
             <CardBody>
+              <CardTitle tag="h3">
+                {currentStudent.name}
+              </CardTitle>
+              <CardText tag="h5">
+                Rank/Belt: {currentStudent.rank}
+              </CardText>
+              <CardText tag="h5">
+                Next Requirement: {currentStudent.next_requirement}
+              </CardText>
+              <CardText tag="h5">
+                Notes: {currentStudent.notes}
+              </CardText>
+            </CardBody>
+            <CardBody>
+            </CardBody>
             <Row xs="3">
               <Col className="show_button">
                 <NavLink to={`/studentedit/${currentStudent.id}`} className="nav-link">
@@ -64,20 +82,6 @@ const StudentShow = ({logged_in, showStudent, deleteStudent, currentStudent, ind
                 </NavLink>
               </Col>
             </Row>
-            </CardBody>
-          </Card>
-          <Card className="student_show">
-            <CardBody>
-              <CardTitle tag="h3">
-                {currentStudent.name}
-              </CardTitle>
-              <CardText tag="h5">
-                Rank: {currentStudent.rank}
-              </CardText>
-              <CardText tag="h5">
-                Notes: {currentStudent.notes}
-              </CardText>
-            </CardBody>
           </Card>
         </CardGroup>
       )}

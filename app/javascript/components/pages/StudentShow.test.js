@@ -12,7 +12,7 @@ describe("<StudentShow />", () => {
       </BrowserRouter>,
       div
       )
-     const waterPark = screen.getByText("View Student Here.")
+     const waterPark = screen.getByText(/Student Profile/i)
       expect(waterPark).toBeInTheDocument()
   })
 })

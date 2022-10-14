@@ -3,7 +3,7 @@ class StudentsController < ApplicationController
 
     def index
         students = current_user.students
-        render json: students
+        render json: students.sort
     end
 
     def show
@@ -22,6 +22,7 @@ class StudentsController < ApplicationController
 
     def update
         student = current_user.students.find(params[:id])
+
         student.update(student_params)
         if student.valid?
             render json: student
