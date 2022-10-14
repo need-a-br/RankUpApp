@@ -8,7 +8,7 @@ const StudentNew = ({ createStudent, logged_in }) => {
     name: "",
     notes: "",
     rank: "",
-    image: "",
+    avatar: {},
   });
 
   const handleChange = (e) => {
@@ -22,10 +22,12 @@ const StudentNew = ({ createStudent, logged_in }) => {
   };
 
   const handleSubmit = () => {
+    console.log(newStudent)
     createStudent(newStudent);
     alert("Student has been added!");
     navigate("/protectedstudentindex");
   };
+  
 
   return (
     <>

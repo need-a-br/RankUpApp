@@ -43,13 +43,13 @@ class StudentsController < ApplicationController
     private
     def student_params
         params.require(:student).permit(
-            :avatar,
             :image,
             :is_ready_for_eval,
             :name,
             :notes,
             :rank,
-            :user_id
+            :user_id,
+            :avatar
         )
     end
 
