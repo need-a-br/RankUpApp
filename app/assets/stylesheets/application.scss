@@ -23,23 +23,23 @@
   font-family: "Lucida Console", monospace;
 }
 
-a:link {
-  text-decoration: none !important;
-  color:black !important;
-  padding: 5px;
-  font-family: "Courier New", monospace;
-}
+// a:link {
+//   text-decoration: none !important;
+//   color:black !important;
+//   padding: 5px;
+//   font-family: "Courier New", monospace;
+// }
 
-a:visited {
-  text-decoration: none !important;
-  color: rgb(87, 1, 1)!important;
-  padding: 5px;
-}
+// a:visited {
+//   text-decoration: none !important;
+//   color: rgb(87, 1, 1)!important;
+//   padding: 5px;
+// }
 
-a:hover, a:active {
-  text-decoration: none;
-  color: rgb(87, 1, 1)!important;
-}
+// a:hover, a:active {
+//   text-decoration: none;
+//   color: rgb(87, 1, 1)!important;
+// }
 
 .add_container {
   width: 100%;
@@ -60,9 +60,9 @@ a:hover, a:active {
 }
 
 button {
-  width: 150px;
-  height: 40px;
-  background-color: rgb(87, 1, 1) !important
+  width: 150px !important;
+  height: 40px !important;
+  background-color: rgb(87, 1, 1) !important;
 }
 
 .cards {
@@ -89,11 +89,16 @@ button {
   font-family: "Lucida Console", monospace;
 }
 
+.font {
+  text-align: center;
+  font-family: "Courier New", monospace;
+  color: rgb(87, 1, 1);
+}
+
 footer {
   display: inline-block;
   bottom: 0;
   display: flex;
-  // background-color: white;
   width: 100%;
   color: white !important ;
   display: inline-block;
@@ -130,6 +135,13 @@ h1, h4 {
   font-family: "Courier New", monospace;
   color: white;
   padding: 3%
+}
+
+h6 {
+  padding: 50px 50px 50px 50px;
+  text-align: center;
+  font-family: "Courier New", monospace;
+  color: rgb(87, 1, 1);
 }
 
 header {
