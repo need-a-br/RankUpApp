@@ -12,7 +12,6 @@ const Home = (props) => {
             src="photos/Home_Image.png"
           />
           <CardImgOverlay>
-        
             <CardText className="home_button">
               {!props.logged_in && (
                 <>
@@ -33,12 +32,9 @@ const Home = (props) => {
                 </>
               )}
             </CardText>
-           
           </CardImgOverlay>
         </Card>
       </div>
-
-      <br/><br/>
 
       <div id="about-us">
         <Card inverse className="about_us">
@@ -78,7 +74,6 @@ const Home = (props) => {
           </CardBody>
         </Card>
       </div>
-      <br/><br/>
     </>
   )
 }

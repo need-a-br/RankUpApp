@@ -20,11 +20,11 @@ describe("<Navigation />", () => {
         <Navigation />
       </BrowserRouter>
     )
-    userEvent.click(screen.getByText("Home"))
-    expect(screen.getByText("Home")).toBeInTheDocument()
-    userEvent.click(screen.getByText("About Us"))
-    expect(screen.getByText("About Us")).toBeInTheDocument()
-    userEvent.click(screen.getByText("Log In"))
-    expect(screen.getByText("Log In")).toBeInTheDocument()
+    userEvent.click(screen.getByAltText("Home"))
+    expect(screen.getByAltText("Home")).toBeInTheDocument()
+    userEvent.click(screen.getByAltText("About Us"))
+    expect(screen.getByAltText("About Us")).toBeInTheDocument()
+    userEvent.click(screen.getByAltText("Log In"))
+    expect(screen.getByAltText("Log In")).toBeInTheDocument()
   })
 })

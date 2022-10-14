@@ -10,8 +10,11 @@ import {
   ListGroup,
   ListGroupItem,
   Button,
-  CardImgOverlay,
-  CardImg
+  CardGroup,
+  CardImg,
+  Row,
+  Col,
+  CardImgOverlay
 } from "reactstrap";
 
 const StudentShow = ({logged_in, showStudent, deleteStudent, currentStudent, index }) => {
@@ -26,40 +29,66 @@ const StudentShow = ({logged_in, showStudent, deleteStudent, currentStudent, ind
   };
 
   return (
-    <>
-      <h1> View Student Here. </h1>
+    <div className="bg">
+      <h1 className="h1-2">Student Profile</h1>
+      
       {currentStudent && !currentStudent.id && (
         <div>Selected student is not your student.</div>
       )}
 
       {logged_in && (
-        <Card style={{ width: "18rem",}} key={index} >
-          <CardImg alt="Card" src={currentStudent.image} />
-          <CardImgOverlay style={{ height: "18rem",}}>
-          {currentStudent.is_ready_for_eval === true && (
-            <CardImg src="../photos/test.png"/>
-          )}
-          </CardImgOverlay>
-          <CardBody>
-            <CardTitle tag="h5">{currentStudent.name}</CardTitle>
-            <CardText>Rank: {currentStudent.rank}</CardText>
-          </CardBody>
-          <ListGroup flush>
-            <ListGroupItem>Notes: {currentStudent.notes}</ListGroupItem>
-          </ListGroup>
-          <CardBody>
-            <NavLink to={"/protectedstudentindex"} className="nav-link">
-              <Button>See All Students</Button>
-            </NavLink>
-            <NavLink to={`/studentedit/${currentStudent.id}`} className="nav-link">
-              <Button>Update/Edit</Button>
-            </NavLink>
-            <DeleteModal handleDelete={handleDelete}/>
-          </CardBody>
-        </Card>
+        <CardGroup className="show_row"  >
+          <Card style={{ width: "15rem"}} key={index}>
+            <CardImg
+                alt="Student Image"
+                src={currentStudent.image}
+                top width="100%"
+                className="student_cards"
+              />
+            <CardImgOverlay className="ready_stamp">
+              {currentStudent.is_ready_for_eval === true && (
+                <CardImg src="../photos/test.png"/>
+              )}
+            </CardImgOverlay>
+          </Card>
+          <Card className="student_show">
+            <CardBody>
+              <CardTitle tag="h3">
+                {currentStudent.name}
+              </CardTitle>
+              <CardText tag="h5">
+                Rank/Belt: {currentStudent.rank}
+              </CardText>
+              <CardText tag="h5">
+                Next Requirement: {currentStudent.next_requirement}
+              </CardText>
+              <CardText tag="h5">
+                Notes: {currentStudent.notes}
+              </CardText>
+            </CardBody>
+            <CardBody>
+            </CardBody>
+            <Row xs="3">
+              <Col md={{size: 6}} sm="12">
+                <NavLink to={`/studentedit/${currentStudent.id}`} className="nav-link">
+                  <img src="../photos/Update.png" style={{height: 60}}/>
+                </NavLink>
+              </Col>
+              <Col md={{size: 6}} sm="12">
+                <NavLink to={"/protectedstudentindex"} className="nav-link">
+                  <img src="../photos/All_Students.png" style={{height: 60}}/>
+                </NavLink>
+              </Col>
+              <Col md={{ offset: 3, size: 6 }} sm="12">
+                <DeleteModal handleDelete={handleDelete}/>
+              </Col>
+            </Row>
+          </Card>
+        </CardGroup>
       )}
       {!logged_in && <h1>Please Log In To Continue</h1>}
-    </>
+    </div>
+
   );
 };
 

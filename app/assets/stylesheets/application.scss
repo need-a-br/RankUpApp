@@ -41,10 +41,28 @@ a:hover, a:active {
   color: rgb(87, 1, 1)!important;
 }
 
+.add_container {
+  width: 100%;
+  color: white;
+  border-radius: 10px;
+  padding: 80px 80px 80px 80px;
+  font-family: "Lucida Console", monospace;
+  background-image: url("Board.png");
+  background-repeat: no-repeat;
+  background-size: cover
+}
+
+.bg {
+  background-image: url("Board.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+}
+
 button {
   width: 150px;
   height: 40px;
-  background-color: rgb(102, 3, 3)
+  background-color: rgb(87, 1, 1) !important
 }
 
 .cards {
@@ -64,24 +82,30 @@ button {
   color: rgb(87, 1, 1);
 }
 
+.container {
+  width: 100%;
+  border-radius: 10px;
+  padding: 80px 80px 80px 80px;
+  font-family: "Lucida Console", monospace;
+}
+
 footer {
   display: inline-block;
   bottom: 0;
   display: flex;
-  // justify-content: space-around;
-  background-color: white;
+  // background-color: white;
   width: 100%;
   color: white !important ;
-  // height: 5vmin;
   display: inline-block;
   text-align: center;
+  position: relative;
 }
 
 .form-body{
   text-align: center;
   margin: 0;
   position: absolute;
-  top: 60%;
+  top: 45%;
   left: 50%;
   transform: translate(-50%, -50%);
   color: black;
@@ -95,10 +119,17 @@ footer {
   background-repeat: no-repeat;
 }
 
-h1 {
+h1, h4 {
   text-align: center;
   font-family: "Courier New", monospace;
   color: rgb(87, 1, 1);
+}
+
+.h1-2 {
+  text-align: center;
+  font-family: "Courier New", monospace;
+  color: white;
+  padding: 3%
 }
 
 header {
@@ -108,13 +139,13 @@ header {
   margin: 0;
   position: sticky;
   background-color: none !important;
+  position: relative;
 }
 
 .home_image {
   background-size: auto;
   border: none;
 }
-
 
 .home_button {
   text-align: center;
@@ -125,6 +156,11 @@ header {
   transform: translate(-50%, -50%);
 }
 
+.index_photo {
+  height: 250px !important; 
+  object-fit: none !important; 
+}
+
 .logo {
   margin-left: 20px;
   width: 20%;
@@ -132,17 +168,48 @@ header {
 }
 
 .my-2 {
-  background-image: url("Cards_bg.png")
+  justify-content: space-around !important;
+  row-gap: 20%;
 }
+
+.ready_stamp {
+  margin-left: 60%;
+  width: 50%;
+}
+
 .student_cards {
   text-align: center;
   font-family: "Courier New", monospace;
-  color: whitesmoke;
+  color: white;
   position: relative;
   padding: 20px 20px 20px 20px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: space-around;
   gap: 20%;
 }
+
+.student_cards2{
+  border: 2px solid rgb(95, 11, 15);
+  margin-bottom: 20px;
+  // background-color: rgba(155, 155, 154, 0.308) !important
+  background-image: url("Board.png");
+}
+
+.student_show {
+  padding: 2%;
+  font-family: "Courier New", monospace;
+  
+}
+
+.show_row {
+  padding: 10px 150px 300px 150px;
+  background-color: none !important;
+
+}
+
+.show_button {
+  padding: 40px 0px 0px 0px;
+}
+

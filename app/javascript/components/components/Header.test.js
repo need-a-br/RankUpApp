@@ -12,7 +12,7 @@ describe("<Header/>", () => {
             <Header/>
             </BrowserRouter>
         )
-        const headerText = screen.getByText(/rankup/i)
+        const headerText = screen.getByAltText(/rankup logo/i)
         expect(headerText).toBeInTheDocument()
     })
 })
