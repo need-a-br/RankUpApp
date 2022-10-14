@@ -43,18 +43,26 @@ a:hover, a:active {
 
 .add_container {
   width: 100%;
-  border: 10px double gray;
+  color: white;
   border-radius: 10px;
   padding: 80px 80px 80px 80px;
   font-family: "Lucida Console", monospace;
-  background-color: rgb(245, 243, 240) !important;
-  // text-align: center;
+  background-image: url("Board.png");
+  background-repeat: no-repeat;
+  background-size: cover
+}
+
+.bg {
+  background-image: url("Board.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  
 }
 
 button {
   width: 150px;
   height: 40px;
-  background-color: rgb(102, 3, 3)
+  background-color: rgb(87, 1, 1) !important
 }
 
 .cards {
@@ -85,7 +93,7 @@ footer {
   display: inline-block;
   bottom: 0;
   display: flex;
-  background-color: white;
+  // background-color: white;
   width: 100%;
   color: white !important ;
   display: inline-block;
@@ -115,6 +123,13 @@ h1, h4 {
   text-align: center;
   font-family: "Courier New", monospace;
   color: rgb(87, 1, 1);
+}
+
+.h1-2 {
+  text-align: center;
+  font-family: "Courier New", monospace;
+  color: white;
+  padding: 3%
 }
 
 header {
@@ -165,7 +180,7 @@ header {
 .student_cards {
   text-align: center;
   font-family: "Courier New", monospace;
-  color: rgb(87, 1, 1);
+  color: white;
   position: relative;
   padding: 20px 20px 20px 20px;
   display: flex;
@@ -178,17 +193,20 @@ header {
 .student_cards2{
   border: 2px solid rgb(95, 11, 15);
   margin-bottom: 20px;
-  background-color: rgb(219, 200, 173) !important
+  // background-color: rgba(155, 155, 154, 0.308) !important
+  background-image: url("Board.png");
 }
 
 .student_show {
   padding: 2%;
   font-family: "Courier New", monospace;
+  
 }
 
 .show_row {
   padding: 10px 150px 300px 150px;
   background-color: none !important;
+
 }
 
 .show_button {

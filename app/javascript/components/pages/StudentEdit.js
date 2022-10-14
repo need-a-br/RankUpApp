@@ -43,7 +43,7 @@ const StudentEdit = ({
       )}
       {logged_in && (
         <div >
-          <h1 style={{ textAlign: "center" }}>Edit Student Profile</h1>
+          <h1 className="h1-2" style={{ textAlign: "center" }}>Edit Student Profile</h1>
           <Form>
             <FormGroup>
               <Label for="name">Edit student's name</Label>
@@ -144,8 +144,11 @@ const StudentEdit = ({
               />
               <Label check>Ready To Test?</Label>
             </FormGroup>
-
-            <CardImg onClick={handleSubmit} name="submit" src="../photos/Submit_Change.png" style={{ width: 150 }}/>
+            <FormGroup>
+            </FormGroup>
+            <Button onClick={handleSubmit} name="submit" className="button">
+              Update
+            </Button>
 
           </Form>
         </div>

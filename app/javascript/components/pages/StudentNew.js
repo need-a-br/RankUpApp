@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Form, FormGroup, Input, Label, Button, CardImg } from "reactstrap";
+import { Form, FormGroup, Input, Label, Button, CardImg, NavLink } from "reactstrap";
 import { useNavigate } from "react-router-dom";
 
 const StudentNew = ({ createStudent, logged_in }) => {
@@ -18,15 +18,16 @@ const StudentNew = ({ createStudent, logged_in }) => {
   const handleSubmit = () => {
     createStudent(newStudent);
     navigate("/protectedstudentindex");
+    window.location.reload(false)
   };
 
   return (
     <div className="show_row">
       <div className="add_container">
-      <h1>Add a Student</h1>
+      <h1 className="h1-2">Add a Student</h1>
       {logged_in && (
         <div >
-        <h4>Complete the form to add a Student. When done, click on Submit button</h4>
+        <h4 className="h1-2">Complete the form to add a Student. When done, click on Submit button</h4>
           <Form>
             <FormGroup>
               <Label for="name">Name</Label>
@@ -98,7 +99,8 @@ const StudentNew = ({ createStudent, logged_in }) => {
               <option value="two_person_form">Two Person Form</option>
               <option value="format">Format</option>
             </Input>
-
+            <FormGroup>
+            </FormGroup>
             <FormGroup>
               <Label for="notes">Notes</Label>
               <Input
@@ -110,8 +112,9 @@ const StudentNew = ({ createStudent, logged_in }) => {
               />
             </FormGroup>
 
-            <CardImg onClick={handleSubmit} name="submit" src="../photos/AddStudent.png" style={{ width: 150 }}/>
-
+            <Button onClick={handleSubmit} name="submit" className="button">
+              Add Student
+            </Button>
           </Form>
         </div>
       )}

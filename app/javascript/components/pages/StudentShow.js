@@ -29,8 +29,9 @@ const StudentShow = ({logged_in, showStudent, deleteStudent, currentStudent, ind
   };
 
   return (
-    <>
-      <h1>Student Profile</h1>
+    <div className="bg">
+      <h1 className="h1-2">Student Profile</h1>
+      
       {currentStudent && !currentStudent.id && (
         <div>Selected student is not your student.</div>
       )}
@@ -68,25 +69,26 @@ const StudentShow = ({logged_in, showStudent, deleteStudent, currentStudent, ind
             <CardBody>
             </CardBody>
             <Row xs="3">
-              <Col className="show_button">
+              <Col md={{size: 6}} sm="12">
                 <NavLink to={`/studentedit/${currentStudent.id}`} className="nav-link">
                   <img src="../photos/Update.png" style={{height: 60}}/>
                 </NavLink>
               </Col>
-              <Col >
-                <DeleteModal handleDelete={handleDelete}/>
-              </Col>
-              <Col className="show_button">
+              <Col md={{size: 6}} sm="12">
                 <NavLink to={"/protectedstudentindex"} className="nav-link">
                   <img src="../photos/All_Students.png" style={{height: 60}}/>
                 </NavLink>
+              </Col>
+              <Col md={{ offset: 3, size: 6 }} sm="12">
+                <DeleteModal handleDelete={handleDelete}/>
               </Col>
             </Row>
           </Card>
         </CardGroup>
       )}
       {!logged_in && <h1>Please Log In To Continue</h1>}
-    </>
+    </div>
+
   );
 };
 
