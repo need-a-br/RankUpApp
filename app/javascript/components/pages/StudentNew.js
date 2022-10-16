@@ -1,5 +1,7 @@
 import React, { useState } from "react";
-import { Form, FormGroup, Input, Label, Button, CardImg, NavLink } from "reactstrap";
+
+import { Form, FormGroup, Input, Label, Button, CardImg, NavLink, FormText } from "reactstrap";
+
 import { useNavigate } from "react-router-dom";
 
 const StudentNew = ({ createStudent, logged_in }) => {
@@ -8,18 +10,26 @@ const StudentNew = ({ createStudent, logged_in }) => {
     name: "",
     notes: "",
     rank: "",
-    image: "",
+    avatar: {},
   });
 
   const handleChange = (e) => {
-    setNewStudent({ ...newStudent, [e.target.name]: e.target.value });
+    let value;
+    if (e.target.name === "avatar") {
+      value = e.target.files[0]
+    } else {
+      value = e.target.value
+    }
+    setNewStudent({ ...newStudent, [e.target.name]: value });
   };
 
   const handleSubmit = () => {
+    console.log(newStudent)
     createStudent(newStudent);
     navigate("/protectedstudentindex");
     window.location.reload(false)
   };
+  
 
   return (
     <div className="show_row">
@@ -100,6 +110,11 @@ const StudentNew = ({ createStudent, logged_in }) => {
               <option value="format">Format</option>
             </Input>
             <FormGroup>
+              <Label for="avatar">Avatar</Label>
+              <Input
+                type="file"
+                name="avatar"
+                onChange={handleChange}
             </FormGroup>
             <FormGroup>
               <Label for="notes">Notes</Label>
@@ -110,6 +125,7 @@ const StudentNew = ({ createStudent, logged_in }) => {
                 onChange={handleChange}
                 value={newStudent.notes}
               />
+              <FormText>Upload Student Image</FormText>
             </FormGroup>
 
             <Button onClick={handleSubmit} name="submit" className="button">
