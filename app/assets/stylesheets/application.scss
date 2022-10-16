@@ -19,44 +19,45 @@
 .about_us {
   margin: 0 auto;
   text-align: center;
-  background-color: rgb(102, 3, 3)!important;
   font-family: "Lucida Console", monospace;
+  background-image: linear-gradient(gray, white, rgb(87, 1, 1));
+
 }
 
-// a:link {
-//   text-decoration: none !important;
-//   color:black !important;
-//   padding: 5px;
-//   font-family: "Courier New", monospace;
-// }
+a:link {
+  text-decoration: none !important;
+  color:black !important;
+  padding: 5px;
+  font-family: "Courier New", monospace;
+}
 
-// a:visited {
-//   text-decoration: none !important;
-//   color: rgb(87, 1, 1)!important;
-//   padding: 5px;
-// }
-
-// a:hover, a:active {
-//   text-decoration: none;
-//   color: rgb(87, 1, 1)!important;
-// }
+a:visited {
+  text-decoration: none !important;
+  color: rgb(87, 1, 1)!important;
+  padding: 5px;
+}
 
 .add_container {
-  width: 100%;
+  width: 80%;
   color: white;
   border-radius: 10px;
-  padding: 80px 80px 80px 80px;
+  padding: 20px 20px 80px 20px;
   font-family: "Lucida Console", monospace;
   background-image: url("Board.png");
   background-repeat: no-repeat;
-  background-size: cover
+  background-size: cover;
+  justify-content: space-around;
+  margin-left:auto;
+  margin-right:auto;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 .bg {
   background-image: url("Board.png");
   background-repeat: no-repeat;
   background-size: cover;
-  
+  border-radius: 20px;
 }
 
 button {
@@ -77,9 +78,11 @@ button {
   border: none;
   margin: 0 auto;
   text-align: center;
-  background-color: lightgrey!important;
   font-family: "Lucida Console", monospace;
   color: rgb(87, 1, 1);
+  background-image: url("WhiteWall.png");
+  background-repeat: no-repeat;
+  background-size: cover
 }
 
 .container {
@@ -108,11 +111,9 @@ footer {
 
 .form-body{
   text-align: center;
-  margin: 0;
-  position: absolute;
-  top: 45%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  margin-left:10%;
+  margin-right:10%;
+  margin-top: 10%;
   color: black;
   border: 1px solid rgb(95, 11, 15);
   border-radius: 10px;
@@ -120,11 +121,13 @@ footer {
   font-family: "Courier New", monospace;
   text-decoration: none !important;
   background-size: cover;
-  background-image: url("Forms.png");
   background-repeat: no-repeat;
+  justify-content: space-around;
+  background-image: url("Container.png"), linear-gradient(rgba(128, 128, 128, 0.233), rgba(255, 255, 255, 0.202))
+  
 }
 
-h1, h4 {
+h1, h3, h4 {
   text-align: center;
   font-family: "Courier New", monospace;
   color: rgb(87, 1, 1);
@@ -133,8 +136,20 @@ h1, h4 {
 .h1-2 {
   text-align: center;
   font-family: "Courier New", monospace;
-  color: white;
+  color: white !important;
   padding: 3%
+}
+
+h5 {
+  text-align: center;
+  font-family: "Courier New", monospace;
+  color: rgb(87, 1, 1);
+}
+
+.h5-2 {
+  text-align: left !important;
+  font-family: "Courier New", monospace;
+  color: rgb(87, 1, 1);
 }
 
 h6 {
@@ -144,18 +159,7 @@ h6 {
   color: rgb(87, 1, 1);
 }
 
-header {
-  height: 12vmin;
-  width: 100%;
-  text-decoration: none !important; 
-  margin: 0;
-  position: sticky;
-  background-color: none !important;
-  position: relative;
-}
-
 .home_image {
-  background-size: auto;
   border: none;
 }
 
@@ -184,9 +188,55 @@ header {
   row-gap: 20%;
 }
 
+.page_bg {
+  background-image: linear-gradient(rgba(128, 128, 128, 0.233), rgba(255, 255, 255, 0.202));
+}
+
+.page_bg_2 {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.202), rgba(17, 15, 15, 0.524), rgba(3, 3, 3, 0.917))
+}
+
+.page_bg_3 {
+  background-image: linear-gradient(rgba(3, 3, 3, 0.917), rgba(17, 15, 15, 0.524), rgba(255, 255, 255, 0.202))
+}
+
+.nav {
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-bottom: 10px;
+}
+
+.nav_link {
+  text-align: end !important;
+}
+
+.not_found {
+  font-family: "Courier New", monospace;
+  text-align: center !important;
+  color: white !important;
+}
+
+.notfound_image {
+  background-image: url("NotFound.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 20px;
+}
+
 .ready_stamp {
   margin-left: 60%;
   width: 50%;
+}
+
+.show_button {
+  padding: 40px 0px 0px 0px;
+}
+
+.show_row {
+  justify-content: space-around;
+  margin-left:10%;
+  margin-right:10%;
+  padding-bottom: 10%;
 }
 
 .student_cards {
@@ -203,25 +253,13 @@ header {
 }
 
 .student_cards2{
-  border: 2px solid rgb(95, 11, 15);
+  border: 5px solid rgba(72, 5, 5, 0.478);
   margin-bottom: 20px;
-  // background-color: rgba(155, 155, 154, 0.308) !important
   background-image: url("Board.png");
 }
 
 .student_show {
   padding: 2%;
   font-family: "Courier New", monospace;
-  
-}
-
-.show_row {
-  padding: 10px 150px 300px 150px;
-  background-color: none !important;
-
-}
-
-.show_button {
-  padding: 40px 0px 0px 0px;
 }
 

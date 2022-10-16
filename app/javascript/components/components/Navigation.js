@@ -16,56 +16,56 @@ const Navigation = ({
           {!logged_in && (
             <NavItem>
               <NavLink to="/" className="nav-link">
-              <img alt="Home" src="../photos/Home.png" style={{height: 50}}/>
+              <img alt="Home" src="../photos/Home.png" style={{height: 40}}/>
               </NavLink>
             </NavItem>
           )}
           {!logged_in && (
             <NavItem>
               <Link to="/#about-us" className="nav-link">
-              <img alt="About Us" src="../photos/About_Us.png" style={{height: 50}}/>
+              <img alt="About RankUp" src="../photos/About_Us.png" style={{height: 40}}/>
               </Link>
             </NavItem>
           )}
           {!logged_in && (
             <NavItem>
               <Link to="/#contact-us" className="nav-link">
-              <img alt="Contact Us" src="../photos/Contact_Us.png" style={{height: 50}}/>
+              <img alt="Contact Us" src="../photos/Contact_Us.png" style={{height: 40}}/>
               </Link>
             </NavItem>
           )}
           {!logged_in && (
             <NavItem>
                 <a href={sign_in_route} className="nav-link">
-                <img alt="Log In" src="../photos/Log_In.png" style={{height: 50}}/>
+                <img alt="Log In" src="../photos/Log_In.png" style={{height: 40}}/>
                 </a>
             </NavItem>
           )}
           {!logged_in && (
             <NavItem>
                 <a href={new_user_route} className="nav-link">
-                <img alt="Register" src="../photos/Register.png" style={{height: 50}}/>
+                <img alt="Register" src="../photos/Register.png" style={{height: 40}}/>
                 </a>
             </NavItem>
           )}
           {logged_in && (
             <NavItem>
               <NavLink to="/protectedstudentindex" className="nav-link">
-              <img alt="My Students" src="../photos/My_Students.png" style={{height: 50}}/>
+              <img alt="My Students" src="../photos/My_Students.png" style={{height: 40}}/>
               </NavLink>
             </NavItem>
           )}
           {logged_in && (
             <NavItem>
               <NavLink to="/studentnew" className="nav-link">
-              <img alt="Add Student" src="../photos/Add_Student.png" style={{height: 50}}/>
+              <img alt="Add Student" src="../photos/Add_Student.png" style={{height: 40}}/>
               </NavLink>
             </NavItem>
           )}
           {logged_in && (
             <NavItem>
                 <a href={sign_out_route} className="nav-link">
-                <img alt="Log Out" src="../photos/Log_Out.png" style={{height: 50}}/>
+                <img alt="Log Out" src="../photos/Log_Out.png" style={{height: 40}}/>
                 </a>
             </NavItem>
           )}

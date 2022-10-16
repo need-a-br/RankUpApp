@@ -27,7 +27,6 @@ const StudentShow = ({logged_in, showStudent, deleteStudent, currentStudent, ind
   const handleDelete = () => {
     deleteStudent(id)
   };
-
   return (
     <div className="bg">
       <h1 className="h1-2">Student Profile</h1>
@@ -37,7 +36,7 @@ const StudentShow = ({logged_in, showStudent, deleteStudent, currentStudent, ind
       )}
 
       {logged_in && (
-        <CardGroup className="show_row"  >
+        <CardGroup className="show_row">
           <Card style={{ width: "15rem"}} key={index}>
             <CardImg
                 alt="Student Image"
@@ -52,35 +51,35 @@ const StudentShow = ({logged_in, showStudent, deleteStudent, currentStudent, ind
             </CardImgOverlay>
           </Card>
           <Card className="student_show">
-            <CardBody>
+            <CardBody className="h5-2">
               <CardTitle tag="h3">
                 {currentStudent.name}
               </CardTitle>
-              <CardText tag="h5">
+              <CardText tag="h5" className="h5-2">
                 Rank/Belt: {currentStudent.rank}
               </CardText>
-              <CardText tag="h5">
+              <CardText tag="h5" className="h5-2">
                 Next Requirement: {currentStudent.next_requirement}
               </CardText>
-              <CardText tag="h5">
+              <CardText tag="h5" className="h5-2">
                 Notes: {currentStudent.notes}
               </CardText>
             </CardBody>
             <CardBody>
             </CardBody>
             <Row xs="3">
-              <Col md={{size: 6}} sm="12">
+              <Col className="show_button">
                 <NavLink to={`/studentedit/${currentStudent.id}`} className="nav-link">
-                  <img src="../photos/Update.png" style={{height: 60}}/>
+                  <img alt="Update Students" src="../photos/Update.png" width="100%"/>
                 </NavLink>
               </Col>
-              <Col md={{size: 6}} sm="12">
-                <NavLink to={"/protectedstudentindex"} className="nav-link">
-                  <img src="../photos/All_Students.png" style={{height: 60}}/>
-                </NavLink>
-              </Col>
-              <Col md={{ offset: 3, size: 6 }} sm="12">
+              <Col >
                 <DeleteModal handleDelete={handleDelete}/>
+              </Col>
+              <Col className="show_button">
+                <NavLink to={"/protectedstudentindex"} className="nav-link">
+                  <img alt="Back to All Students" src="../photos/All_Students.png" width="100%"/>
+                </NavLink>
               </Col>
             </Row>
           </Card>
@@ -88,7 +87,6 @@ const StudentShow = ({logged_in, showStudent, deleteStudent, currentStudent, ind
       )}
       {!logged_in && <h1>Please Log In To Continue</h1>}
     </div>
-
   );
 };
 

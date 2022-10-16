@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Form, FormGroup, Input, Label, Button, CardImg, NavLink } from "reactstrap";
+import { Form, FormGroup, Input, Label, Button, CardImg, NavLink, CardTitle } from "reactstrap";
 import { useNavigate } from "react-router-dom";
 
 const StudentNew = ({ createStudent, logged_in }) => {
@@ -22,13 +22,13 @@ const StudentNew = ({ createStudent, logged_in }) => {
   };
 
   return (
-    <div className="show_row">
-      <div className="add_container">
+    <div className="page_bg_2">
+    <div className="add_container">
       <h1 className="h1-2">Add a Student</h1>
       {logged_in && (
         <div >
-        <h4 className="h1-2">Complete the form to add a Student. When done, click on Submit button</h4>
           <Form>
+            <CardTitle>Complete the form to add a Student. When done, click on Submit button</CardTitle>
             <FormGroup>
               <Label for="name">Name</Label>
               <Input

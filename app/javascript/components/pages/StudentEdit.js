@@ -36,7 +36,7 @@ const StudentEdit = ({
   };
 
   return (
-    <div className="show_row">
+    <div className="page_bg_2">
     <div className="add_container">
       {currentStudent && !currentStudent.id && (
         <h1>Selected student is not your student.</h1>
