@@ -3,18 +3,51 @@ class StudentsController < ApplicationController
 
     def index
         students = current_user.students
-        render json: students.sort
+        students.sort
+
+        studentsArray = Array.new
+        students.each { |student| 
+            x = {
+                id: student.id,
+                name: student.name,
+                rank: student.rank,
+                notes: student.notes,
+                next_requirement: student.next_requirement,
+                avatar: student.avatar.url,
+                is_ready_for_eval: student.is_ready_for_eval
+            }
+            studentsArray.push x
+        }       
+
+        render json: studentsArray
     end
 
     def show
         student = current_user.students.find(params[:id])
-        render json: student
+
+        render json: { 
+            id: student.id,
+            name: student.name,
+            rank: student.rank,
+            notes: student.notes,
+            next_requirement: student.next_requirement,
+            avatar: student.avatar.url,
+            is_ready_for_eval: student.is_ready_for_eval
+        }
     end
 
     def create
         student = current_user.students.create(student_params)
         if student.valid?
-            render json: student
+            render json: { 
+                id: student.id,
+                name: student.name,
+                rank: student.rank,
+                notes: student.notes,
+                next_requirement: student.next_requirement,
+                avatar: student.avatar.url,
+                is_ready_for_eval: student.is_ready_for_eval
+            }
         else
             puts student.errors.messages
             render json: student.errors, status: 422
@@ -26,7 +59,15 @@ class StudentsController < ApplicationController
 
         student.update(student_params)
         if student.valid?
-            render json: student
+            render json: { 
+                id: student.id,
+                name: student.name,
+                rank: student.rank,
+                notes: student.notes,
+                next_requirement: student.next_requirement,
+                avatar: student.avatar.url,
+                is_ready_for_eval: student.is_ready_for_eval
+            }
         else
             render json: student.errors, status: 422
         end
@@ -35,7 +76,15 @@ class StudentsController < ApplicationController
     def destroy
         student = current_user.students.find(params[:id])
         if student.destroy
-            render json: student
+            render json: { 
+                id: student.id,
+                name: student.name,
+                rank: student.rank,
+                notes: student.notes,
+                next_requirement: student.next_requirement,
+                avatar: student.avatar.url,
+                is_ready_for_eval: student.is_ready_for_eval
+            }
         else
             render json: student.errors, status: 422
         end
@@ -45,6 +94,7 @@ class StudentsController < ApplicationController
     def student_params
         params.require(:student).permit(
             :image,
+            :next_requirement,
             :is_ready_for_eval,
             :name,
             :notes,

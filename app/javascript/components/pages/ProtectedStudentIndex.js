@@ -18,6 +18,8 @@ const ProtectedStudentIndex = ({ readStudents, students }) => {
     readStudents();
   }, []);
 
+
+
   return (
     <div className="page_bg_2">
       <h1>List of Your Students</h1>
@@ -36,7 +38,7 @@ const ProtectedStudentIndex = ({ readStudents, students }) => {
                       <CardImg  src="../photos/test.png" />
                     )}
                   </CardImgOverlay>
-                  <CardImg className="index_photo" alt="Card" src={student.image} />
+                  <CardImg className="index_photo" alt="Card" src={student.avatar} />
                   <CardBody>
                     <CardTitle tag="h5" className="h1-2">
                       {student.name}
