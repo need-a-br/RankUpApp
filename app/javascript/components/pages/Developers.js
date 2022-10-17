@@ -1,11 +1,12 @@
 import React from "react";
 import { Card, CardImg, CardGroup, CardTitle, CardBody, CardSubtitle, CardText, Button } from "reactstrap";
+import { NavLink } from "react-router-dom";
 
 const Developers = () => {
   return (
     <>
       <h1>Meet the Developers</h1>
-      <h4>
+      <h6>
         Our team is composed of Cathrine Carreon, Samuel Scott, Clifford Roecker
         and Vanessa Bastien. When tasked with the job of meeting Kung Fu
         instructors’ need for a better way to track their students achievements
@@ -14,7 +15,7 @@ const Developers = () => {
         Each member used their strengths and skills and gained a few new ones,
         too. They proudly present their work, and welcome comments and
         suggestions on improvements in the future.
-      </h4>
+      </h6>
       <CardGroup>
   <Card>
     <CardImg
@@ -23,22 +24,21 @@ const Developers = () => {
       top
       width="100%"
     />
-    <CardBody>
-      <CardTitle tag="h5">
+    <CardBody className="font">
+      <CardTitle tag="h1">
         Vanessa
       </CardTitle>
       <CardSubtitle
         className="mb-2 text-muted"
-        tag="h6"
       >
         Project-Manager
       </CardSubtitle>
       <CardText>
       Meet Vanessa, our project manager extraordinaire! She keeps us on track and on time. This marketer turned developer loves to make clothes and cake, often asks questions before realizing she knows the answer, and is irritatingly grateful
       </CardText>
-      <Button>
-        Button
-      </Button>
+      <a href="https://vkathryn.github.io/" target="_blank">
+        <img alt="See Portfolio" src="../photos/Portfolio.png" width="50%"/>
+      </a>
     </CardBody>
 
   </Card>
@@ -49,22 +49,21 @@ const Developers = () => {
       top
       width="100%"
     />
-    <CardBody>
-      <CardTitle tag="h5">
+    <CardBody className="font">
+      <CardTitle tag="h1">
         Sam
       </CardTitle>
       <CardSubtitle
         className="mb-2 text-muted"
-        tag="h6"
       >
         Product Manager
       </CardSubtitle>
       <CardText>
       Meet Sam, our product manager who keeps our app on track! An avid kung fu practitioner who practices and teaches kung fu on a daily basis, Sam collects Lego,like monkeys and hopes to live a secluded mountain life with his beloved girlfriend.
       </CardText>
-      <Button>
-        Button
-      </Button>
+      <a href="https://sanjuel.netlify.app/index.html" target="_blank">
+        <img alt="See Portfolio" src="../photos/Portfolio.png" width="50%"/>
+      </a>
     </CardBody>
   </Card>
 
@@ -75,22 +74,21 @@ const Developers = () => {
       top
       width="100%"
     />
-    <CardBody>
-      <CardTitle tag="h5">
+    <CardBody className="font">
+      <CardTitle tag="h1">
         Clifford
       </CardTitle>
       <CardSubtitle
         className="mb-2 text-muted"
-        tag="h6"
       >
         Tech Lead
       </CardSubtitle>
       <CardText>
       Meet Cliffie (boy, does he wish you would call him Ford!), our tech lead. When he’s not bossing us around, he loves jamming to Fergalicious, Brunch,Banana Bread and Seth Rogan. Ask him to tell you the story about jelly beans.
       </CardText>
-      <Button>
-        Button
-      </Button>
+      <a href="http://www.4dwd.net/" target="_blank">
+        <img alt="See Portfolio" src="../photos/Portfolio.png" width="50%"/>
+      </a>
     </CardBody>
   </Card>
 
@@ -101,25 +99,24 @@ const Developers = () => {
       top
       width="100%"
     />
-    <CardBody>
-      <CardTitle tag="h5">
+    <CardBody className="font">
+      <CardTitle tag="h1">
         Cathrine
       </CardTitle>
       <CardSubtitle
         className="mb-2 text-muted"
-        tag="h6"
       >
         Design Lead
       </CardSubtitle>
       <CardText>
       Meet Cathrine, our stellar design lead! Cathrine enjoys making fun of people, collecting erasers and doesn’t suffer fools gladly. Her zoom backgrounds are the stuff of legends.
       </CardText>
-      <Button>
-        Button
-      </Button>
+      <a href="https://cjcarreon.com/" target="_blank">
+        <img alt="See Portfolio" src="../photos/Portfolio.png" width="50%"/>
+      </a>
     </CardBody>
   </Card>
-  
+
 </CardGroup>
     </>
   );
