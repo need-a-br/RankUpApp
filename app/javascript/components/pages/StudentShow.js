@@ -30,7 +30,6 @@ const StudentShow = ({logged_in, showStudent, deleteStudent, currentStudent, ind
   return (
     <div className="bg">
       <h1 className="h1-2">Student Profile</h1>
-      
       {currentStudent && !currentStudent.id && (
         <div>Selected student is not your student.</div>
       )}
@@ -40,7 +39,7 @@ const StudentShow = ({logged_in, showStudent, deleteStudent, currentStudent, ind
           <Card style={{ width: "15rem"}} key={index}>
             <CardImg
                 alt="Student Image"
-                src={currentStudent.image}
+                src={currentStudent.avatar}
                 top width="100%"
                 className="student_cards"
               />
