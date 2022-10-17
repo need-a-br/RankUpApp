@@ -38,16 +38,11 @@ const ProtectedStudentIndex = ({ readStudents, students }) => {
                       <CardImg  src="../photos/test.png" />
                     )}
                   </CardImgOverlay>
-                  <CardImg className="index_photo" alt="Card" src={student.avatar_attachment} />
+                  <CardImg className="index_photo" alt="Card" src={student.avatar} />
                   <CardBody>
                     <CardTitle tag="h5">
                       {student.name}
                     </CardTitle>
-                    {/* delete below */}
-                    <CardText>
-                    water: {student.avatar_attachment} 
-                    </CardText>
-                    {/* delete above */}
                     <CardText>
                       Rank/Belt: {student.rank} 
                     </CardText>

@@ -10,6 +10,8 @@ const StudentNew = ({ createStudent, logged_in }) => {
     name: "",
     notes: "",
     rank: "",
+    next_requirement: "",
+    is_ready_for_eval: false,
     avatar: {},
   });
 
@@ -21,6 +23,7 @@ const StudentNew = ({ createStudent, logged_in }) => {
       value = e.target.value
     }
     setNewStudent({ ...newStudent, [e.target.name]: value });
+    window.location.reload(false)
   };
 
   const handleSubmit = () => {

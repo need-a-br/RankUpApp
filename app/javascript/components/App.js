@@ -29,6 +29,8 @@ const App = (props) => {
       .then((response) => response.json())
       .then((payload) => {
         setCurrentStudent(payload)
+        console.log(payload)
+        console.log(currentStudent)
       })
       .catch((error) => console.log(error))
   }
@@ -38,6 +40,8 @@ const App = (props) => {
     formData.append("student[rank]", student.rank)
     formData.append("student[name]", student.name)
     formData.append("student[notes]", student.notes)
+    formData.append("student[next_requirement]", student.next_requirement)
+    formData.append("student[is_ready_for_eval]", student.is_ready_for_eval)
     formData.append("student[avatar]", student.avatar)
     fetch("/students", {
       body: formData,
