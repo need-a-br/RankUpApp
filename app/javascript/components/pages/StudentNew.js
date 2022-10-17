@@ -1,7 +1,15 @@
 import React, { useState } from "react";
-
-import { Form, FormGroup, Input, Label, Button, CardImg, NavLink, FormText } from "reactstrap";
-
+import {
+  Form,
+  FormGroup,
+  Input,
+  Label,
+  Button,
+  CardImg,
+  NavLink,
+  FormText,
+  CardTitle,
+} from "reactstrap";
 import { useNavigate } from "react-router-dom";
 
 const StudentNew = ({ createStudent, logged_in }) => {
@@ -16,23 +24,22 @@ const StudentNew = ({ createStudent, logged_in }) => {
   const handleChange = (e) => {
     let value;
     if (e.target.name === "avatar") {
-      value = e.target.files[0]
+      value = e.target.files[0];
     } else {
-      value = e.target.value
+      value = e.target.value;
     }
     setNewStudent({ ...newStudent, [e.target.name]: value });
   };
 
   const handleSubmit = () => {
-    console.log(newStudent)
+    console.log(newStudent);
     createStudent(newStudent);
     navigate("/protectedstudentindex");
-    window.location.reload(false)
+    window.location.reload(false);
   };
-  
 
   return (
-    <div className="show_row">
+    <div className="page_bg_2">
       <div className="add_container">
       <h1 className="h1-2">Add a Student</h1>
       {logged_in && (
@@ -51,23 +58,23 @@ const StudentNew = ({ createStudent, logged_in }) => {
             </FormGroup>
             <FormGroup>
               <Label for="rank">Rank/Belt</Label>
-              <Input
-                type="select"
-                name="rank"
-                placeholder="Rank"
-                onChange={handleChange}
-                value={newStudent.rank}
-              >
-                <option>Select Student Belt Color</option>
-                <option value="white">White</option>
-                <option value="yellow">Yellow</option>
-                <option value="green">Green</option>
-                <option value="blue">Blue</option>
-                <option value="purple">Purple</option>
-                <option value="brown">Brown</option>
-                <option value="black">Black</option>
-              </Input>
-            </FormGroup>
+                <Input
+                  type="select"
+                  name="rank"
+                  placeholder="Rank"
+                  onChange={handleChange}
+                  value={newStudent.rank}
+                >
+                  <option>Select Student Belt Color</option>
+                  <option value="white">White</option>
+                  <option value="yellow">Yellow</option>
+                  <option value="green">Green</option>
+                  <option value="blue">Blue</option>
+                  <option value="purple">Purple</option>
+                  <option value="brown">Brown</option>
+                  <option value="black">Black</option>
+                </Input>
+              </FormGroup>
             <Label for="next_requirement">Next Requirement</Label>
             <Input
               type="select"
@@ -116,14 +123,13 @@ const StudentNew = ({ createStudent, logged_in }) => {
               />
               <FormText>Upload Student Image</FormText>
             </FormGroup>
-
-            <Button onClick={handleSubmit} name="submit" className="button">
-              Add Student
-            </Button>
-          </Form>
-        </div>
-      )}
-      {!logged_in && <h1>Please Log In To Continue</h1>}
+              <Button onClick={handleSubmit} name="submit" className="button">
+                Add Student
+              </Button>
+            </Form>
+          </div>
+        )}
+        {!logged_in && <h1>Please Log In To Continue</h1>}
       </div>
     </div>
   );

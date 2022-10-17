@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Nav } from "reactstrap";
 import { NavLink } from "react-router-dom";
 
 const DeleteModal = ({ handleDelete }) => {
@@ -12,7 +12,7 @@ const DeleteModal = ({ handleDelete }) => {
   return (
     <div>
       <NavLink name="submit" onClick={toggle}>
-      <img src="../photos/Delete.png" style={{width: 150}}/>
+       <img src="../photos/Delete.png" width="100%"/>
       </NavLink>
       <Modal toggle={toggle} isOpen={showModal}>
         <ModalHeader>Delete Confirmation</ModalHeader>
