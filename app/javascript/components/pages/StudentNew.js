@@ -49,18 +49,6 @@ const StudentNew = ({ createStudent, logged_in }) => {
                 value={newStudent.name}
               />
             </FormGroup>
-
-            <FormGroup>
-              <Label for="image">Image</Label>
-              <Input
-                type="text"
-                name="image"
-                placeholder="URL of Image"
-                onChange={handleChange}
-                value={newStudent.image}
-              />
-            </FormGroup>
-
             <FormGroup>
               <Label for="rank">Rank/Belt</Label>
               <Input
@@ -115,6 +103,7 @@ const StudentNew = ({ createStudent, logged_in }) => {
                 type="file"
                 name="avatar"
                 onChange={handleChange}
+                />
             </FormGroup>
             <FormGroup>
               <Label for="notes">Notes</Label>
