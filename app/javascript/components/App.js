@@ -33,12 +33,17 @@ const App = (props) => {
       .catch((error) => console.log(error))
   }
 
-  const createStudent = (students) => {
+  const createStudent = (student) => {
+    const formData = new FormData();
+    formData.append("student[rank]", student.rank)
+    formData.append("student[name]", student.name)
+    formData.append("student[notes]", student.notes)
+    formData.append("student[avatar]", student.avatar)
     fetch("/students", {
-      body: JSON.stringify(students),
-      headers: {
-        "Content-Type": "application/json"
-      },
+      body: formData,
+      // headers: {
+      //   "Content-Type": "multipart/form-data"
+      // },
       method: "POST"
     })
     .then((response) => response.json())
