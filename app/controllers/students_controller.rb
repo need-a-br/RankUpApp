@@ -94,6 +94,7 @@ class StudentsController < ApplicationController
     def student_params
         params.require(:student).permit(
             :image,
+            :next_requirement,
             :is_ready_for_eval,
             :name,
             :notes,

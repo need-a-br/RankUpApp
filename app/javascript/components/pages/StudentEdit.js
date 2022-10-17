@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Form, FormGroup, Input, Label, Button, CardImg } from "reactstrap";
+import { Form, FormGroup, Input, Label, Button, FormText, CardImg } from "reactstrap";
 import { useParams, useNavigate } from "react-router-dom";
 
 const StudentEdit = ({
@@ -55,16 +55,13 @@ const StudentEdit = ({
                 value={editStudent.name}
               />
             </FormGroup>
-
             <FormGroup>
-              <Label for="image">Image URL for Student</Label>
+              <Label for="avatar">Avatar</Label>
               <Input
-                type="text"
-                name="image"
-                placeholder={currentStudent.image}
+                type="file"
+                name="avatar"
                 onChange={handleChangeStudent}
-                value={editStudent.image}
-              />
+                />
             </FormGroup>
 
             <FormGroup>
@@ -133,7 +130,6 @@ const StudentEdit = ({
                 value={editStudent.notes}
               />
             </FormGroup>
-
             <FormGroup switch>
               <Input
                 name="is_ready_for_eval"

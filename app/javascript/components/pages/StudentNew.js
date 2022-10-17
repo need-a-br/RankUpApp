@@ -23,11 +23,9 @@ const StudentNew = ({ createStudent, logged_in }) => {
       value = e.target.value
     }
     setNewStudent({ ...newStudent, [e.target.name]: value });
-    window.location.reload(false)
   };
 
   const handleSubmit = () => {
-    console.log(newStudent)
     createStudent(newStudent);
     navigate("/protectedstudentindex");
     window.location.reload(false)
@@ -117,7 +115,6 @@ const StudentNew = ({ createStudent, logged_in }) => {
                 onChange={handleChange}
                 value={newStudent.notes}
               />
-              <FormText>Upload Student Image</FormText>
             </FormGroup>
 
             <Button onClick={handleSubmit} name="submit" className="button">
