@@ -12,7 +12,7 @@ describe("<Home/>", () => {
             <Home/>
             </BrowserRouter>
         )
-        const headerText = screen.getAllByText(/Home Page Photo/i)
+        const headerText = screen.getByText(/Team Need a BR/i)
         expect(headerText).toBeInTheDocument()
     })
 })

@@ -5,10 +5,16 @@ import ProtectedStudentIndex from "./ProtectedStudentIndex"
 
 describe("<ProtectedStudentIndex />", () => {
   it("renders without crashing", () => {
+    const readStudents = () => {}
+    const students = []
+
     const div = document.createElement("div")
     render(
       <BrowserRouter>
-        <ProtectedStudentIndex />
+            <ProtectedStudentIndex
+              readStudents = {readStudents}
+              students = {students}
+            />
       </BrowserRouter>,
       div
       )
